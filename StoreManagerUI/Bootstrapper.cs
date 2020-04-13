@@ -28,7 +28,9 @@ namespace StoreManagerUI
                 .Singleton<IEventAggregator, EventAggregator>();
 
             _container
-                .PerRequest<IDataAcesserModel, DataAcesserModel>();
+                .PerRequest<IDataAccessModel, DataAccessModel>()
+                .PerRequest<IProductModel, ProductModel>();
+                   
 
             GetType().Assembly.GetTypes()
                 .Where(type => type.IsClass)

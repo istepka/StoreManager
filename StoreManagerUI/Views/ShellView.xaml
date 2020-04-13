@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StoreManagerUI.Views"
-        mc:Ignorable="d" Background="Aqua" WindowStartupLocation="CenterScreen" FontSize="18" MinHeight="300" MinWidth="531"
+        mc:Ignorable="d" Background="WhiteSmoke" WindowStartupLocation="CenterScreen" FontSize="18" MinHeight="300" MinWidth="531"
         Title="ShellView" Height="450" Width="800">
     <Grid>
 
@@ -35,17 +35,32 @@
 
         <!--ROW 1-->
         <Button x:Name="loadProductsButton" Grid.Column="1" Grid.Row="1" Content="Load products"  Margin="20,10"/>
-        <TextBlock  Text="{Binding Path=SelectedProduct_Name, Mode=OneWay}"  Grid.Column="1" Grid.Row="2"/>
+       
+        
+        <StackPanel Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" Orientation="Vertical">
+            <ListView  x:Name="ProductsList" SelectedItem="{Binding Path=SelectedProduct, Mode=OneWayToSource}" MaxHeight="250" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name"  DisplayMemberBinding="{Binding Name}"  Width="150"/>
+                        <GridViewColumn Header="Price"  DisplayMemberBinding="{Binding Price}" Width="60"/>
+                        <GridViewColumn Header="In stock"  DisplayMemberBinding="{Binding Quantity}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
 
-        <!--ROW 2-->
-        <ListView Grid.Row="2" Grid.Column="2" x:Name="ProductsList" SelectedItem="{Binding Path=SelectedPerson, Mode=OneWayToSource}" DisplayMemberPath="ProductOverview" >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name"  DisplayMemberBinding="{Binding Name}"  Width="150"/>
-                    <GridViewColumn Header="Price"  DisplayMemberBinding="{Binding Price}" Width="60"/>
-                    <GridViewColumn Header="In stock"  DisplayMemberBinding="{Binding Quantity}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+            <TextBlock x:Name="SelectedProduct_ProductOverview" HorizontalAlignment="Center"/>
+            
+            <Button  x:Name="RemoveProduct" Content="Remove selected product" Margin="0,10,0,10"/>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Add quantity"/>
+                <TextBox x:Name ="QuantityToAdd" MinHeight="20" MinWidth="30" Margin="10,0"/>
+                <Button x:Name="SubmitQuantityChange"  Content="Submit change" HorizontalAlignment="Right"/>
+            </StackPanel>
+            
+        </StackPanel>
+        
+        
+        
     </Grid>
 </Window>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StoreManagerUI.Models
 {
-    public class ProductModel
+    public class ProductModel : IProductModel
     {
         /// <summary>
         /// Id of product

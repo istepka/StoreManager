@@ -93,10 +93,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\IDataAcesserModel.cs" />
+    <Compile Include="Models\IDataAccessModel.cs" />
+    <Compile Include="Models\IProductModel.cs" />
     <Compile Include="ViewModels\AdminOperationsViewModel.cs" />
     <Compile Include="ViewModels\CashierOperationsViewModel.cs" />
-    <Compile Include="Models\DataAcesserModel.cs" />
+    <Compile Include="Models\DataAccessModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\AdminOperationsView.xaml.cs">

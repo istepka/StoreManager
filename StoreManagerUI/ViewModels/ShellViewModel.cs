@@ -21,29 +21,73 @@ namespace StoreManagerUI.ViewModels
 
         //}
 
-        private BindableCollection<ProductModel> _productModels = new BindableCollection<ProductModel>();
-        private ProductModel _selectedProduct;
-        IDataAcesserModel _dataAcesserModel;
+        private BindableCollection<IProductModel> _productModels = new BindableCollection<IProductModel>();
+        private IProductModel _selectedProduct;
+        private IDataAccessModel _dataAcesserModel;
+        private int _quantityToAdd;
 
-        public ShellViewModel(IDataAcesserModel dataAcesserModel)
+        public int QuantityToAdd 
         {
-            _dataAcesserModel = dataAcesserModel;
-            _productModels = new BindableCollection<ProductModel>(_dataAcesserModel.LoadProducts());
+            get 
+            {
+                return _quantityToAdd; 
+            } 
+            set 
+            {
+                _quantityToAdd = value;
+                NotifyOfPropertyChange(() => QuantityToAdd);
+             } 
         }
-
-
-        public BindableCollection<ProductModel> ProductsList
+        public ShellViewModel(IDataAccessModel dataAcesserModel, IProductModel product)
+        {
+            _selectedProduct = product;
+            _dataAcesserModel = dataAcesserModel;
+            _productModels = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
+        }
+        public BindableCollection<IProductModel> ProductsList
         {
             get { return _productModels; }
             set { _productModels = value; }
         }
-        public ProductModel SelectedPerson
+        public IProductModel SelectedProduct
         {
             get { return _selectedProduct; }
             set
             {
                 _selectedProduct = value;
+                NotifyOfPropertyChange(() => SelectedProduct);
             }
         }
+        public void RemoveProduct()
+        {
+            //TODO REMOVE FROM LIST
+            _dataAcesserModel.RemoveExistingProduct(_selectedProduct.Id);
+            RefreshList();
+        }
+        
+        public void SubmitQuantityChange(int quantityToAdd, IProductModel selectedProduct)
+        {
+            _dataAcesserModel.ChangeQuantityOfProduct(_selectedProduct.Quantity,quantityToAdd,_selectedProduct.Id);
+            QuantityToAdd = 0;
+            RefreshList();
+        }
+
+        public bool CanSubmitQuantityChange(int quantityToAdd, IProductModel selectedProduct )
+        {
+            //TODO if any product selected
+            if (quantityToAdd != 0 && _selectedProduct != null)
+                return true;
+            else 
+                return false;
+        }
+    
+        
+
+        public void RefreshList()
+        {
+            _productModels = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
+            NotifyOfPropertyChange(() => ProductsList);
+        }
+
     }
 }

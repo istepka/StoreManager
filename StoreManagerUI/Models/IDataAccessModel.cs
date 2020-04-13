@@ -2,12 +2,12 @@
 
 namespace StoreManagerUI.Models
 {
-    public interface IDataAcesserModel
+    public interface IDataAccessModel
     {
         void AddNewProduct(string name, float price, int quantity);
-        void ChangeQuantityOfProduct(ProductModel product);
+        void ChangeQuantityOfProduct(int actualQuantity, int quantity, int id);
         string LoadConnectionString(string id = "Default");
         List<ProductModel> LoadProducts();
-        void RemoveExistingProduct(ProductModel product);
+        void RemoveExistingProduct(int id);
     }
 }

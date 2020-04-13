@@ -13,7 +13,7 @@ namespace StoreManagerUI.ViewModels
         private BindableCollection<ProductModel> _productModels = new BindableCollection<ProductModel>();
         private ProductModel _selectedProduct;
 
-        public AdminOperationsViewModel(DataAcesserModel dataAcesser)
+        public AdminOperationsViewModel(DataAccessModel dataAcesser)
         {
             _productModels = new BindableCollection<ProductModel>(dataAcesser.LoadProducts());
         }

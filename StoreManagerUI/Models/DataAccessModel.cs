@@ -10,8 +10,14 @@ using System.Threading.Tasks;
 
 namespace StoreManagerUI.Models
 {
-    public class DataAcesserModel : IDataAcesserModel
+    public class DataAccessModel : IDataAccessModel
     {
+        public DataAccessModel()
+        {
+
+        }
+
+
         // private List<Product> products;
         public List<ProductModel> LoadProducts()
         {
@@ -35,22 +41,22 @@ namespace StoreManagerUI.Models
             }
         }
 
-        public void RemoveExistingProduct(ProductModel product)
+        public void RemoveExistingProduct(int id)
         {
 
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute($"DELETE FROM Products WHERE Id = {product.Id}");
+                cnn.Execute($"DELETE FROM Products WHERE Id = {id}");
 
 
             }
         }
 
-        public void ChangeQuantityOfProduct(ProductModel product)
+        public void ChangeQuantityOfProduct(int actualQuantity, int quantity, int id)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute($"UPDATE Products SET Quantity = {product.Quantity} WHERE Id = {product.Id}");
+                cnn.Execute($"UPDATE Products SET Quantity = {quantity+actualQuantity} WHERE Id = {id}");
             }
         }
 
