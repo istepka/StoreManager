@@ -93,8 +93,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Helpers\APIHelper.cs" />
+    <Compile Include="Helpers\PasswordBoxHelper.cs" />
+    <Compile Include="Helpers\UserDBHelper.cs" />
     <Compile Include="Models\IDataAccessModel.cs" />
     <Compile Include="Models\IProductModel.cs" />
+    <Compile Include="Models\SessionData.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\CashierViewModel.cs" />
     <Compile Include="Models\DataAccessModel.cs" />
@@ -139,6 +144,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="UsersDB.db" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

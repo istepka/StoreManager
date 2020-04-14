@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Caliburn.Micro;
+using StoreManagerUI.Helpers;
 using StoreManagerUI.Models;
 using StoreManagerUI.ViewModels;
 using System;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace StoreManagerUI
 {
@@ -17,6 +19,10 @@ namespace StoreManagerUI
         public Bootstrapper()
         {
             Initialize();
+            ConventionManager.AddElementConvention<PasswordBox>(
+            PasswordBoxHelper.BoundPasswordProperty,
+            "Password",
+            "PasswordChanged");
         }
 
         protected override void Configure()

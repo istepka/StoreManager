@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+using StoreManagerUI.Helpers;
+using StoreManagerUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,15 +15,32 @@ namespace StoreManagerUI.ViewModels
         #region Privates
         private string _username;
 		private string _password;
+		private string _loginError;
+		private UserModel _activeUser;
 
+		#endregion
+	
 
-        #endregion
+		public UserModel ActiveUser
+		{
+			get { return _activeUser; }
+			set { _activeUser = value; NotifyOfPropertyChange(() => ActiveUser);  }
+		}
 
-
-        public string Username
+		public string LoginError
+		{
+			get { return _loginError; }
+			set { _loginError = value; NotifyOfPropertyChange(() => LoginError); }
+		}
+		public string Username
 		{
 			get { return _username; }
-			set { _username = value; NotifyOfPropertyChange(() => Username);}
+			set 
+			{ 
+				_username = value; 
+				NotifyOfPropertyChange(() => Username);
+				NotifyOfPropertyChange(() => CanLogIn);
+			}
 		}
 		public string Password
 		{
@@ -30,26 +49,42 @@ namespace StoreManagerUI.ViewModels
 			{ 
 				_password = value; 
 				NotifyOfPropertyChange(() => Password); 
+				NotifyOfPropertyChange(() => CanLogIn); 
 			}
 		}
 
-		public bool CanLogin(string username, string password)
+		public bool CanLogIn
 		{
-			bool validation = false;
-			if(username.Length>0  && password.Length>0)
+			get
 			{
-				validation= true;
+				bool validation = false;
+				if (Username?.Length > 0 && Password?.Length > 0)
+				{
+					validation = true;
+				}
+				return validation;
 			}
-			return validation;
 			
 		}
 
-		public void Login(string username, string password)
+		public void LogIn(string username, string password)
 		{
-			Console.WriteLine("Logged in");
+			UserModel user = new UserDBHelper().GetUser(username, Password);
+			if(user.Role != null)
+			{
+				//Console.WriteLine("Succeded");
+				SessionData.Username = user.Username;
+				SessionData.Role = user.Role;
+				LoginError = "Login succeded";
+			}
+			else
+			{
+				LoginError = "Login failed, try again";
+				Password = "";
+			}
 		}
 
-		
+	
 
 
 	}

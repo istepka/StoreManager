@@ -15,19 +15,35 @@ namespace StoreManagerUI.ViewModels
         private LoginViewModel _loginVM;
 
 
+        private UserModel _activeLoggedUser;
 
-      
+        public UserModel ActiveLoggedUser
+        {
+            get { return _activeLoggedUser; }
+            set { _activeLoggedUser = value; NotifyOfPropertyChange(() => ActiveLoggedUser); }
+        }
+
+
+
+
         public ShellViewModel(AdminViewModel adminVM, CashierViewModel cashierVM, LoginViewModel loginVM)
         {
             _adminVM = adminVM;
             _cashierVM = cashierVM;
             _loginVM = loginVM;
             ActivateItem(_loginVM);
-
         }
       
+        public bool CanAdminScreen()
+        {
+            if (ActiveLoggedUser?.Role == "admin")
+                return true;
+            else
+                return false;
+        }
         public void AdminScreen()
         {
+            
             ActivateItem(_adminVM);
         } 
         public void CashierScreen()
