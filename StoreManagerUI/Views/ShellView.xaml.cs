@@ -23,5 +23,6 @@ namespace StoreManagerUI.Views
         {
             InitializeComponent();
         }
+
     }
 }

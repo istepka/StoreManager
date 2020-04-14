@@ -10,84 +10,49 @@ namespace StoreManagerUI.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
-        //public void LoadAdminPage()
-        //{
-        //    ActivateItem(new AdminOperationsViewModel(new DataAcesserModel()));
-        //}
+        private AdminViewModel _adminVM;
+        private CashierViewModel _cashierVM;
+        private LoginViewModel _loginVM;
 
-        //public void LoadCashierPage()
-        //{
-        //    ActivateItem(new CashierOperationsViewModel());
 
-        //}
 
-        private BindableCollection<IProductModel> _productModels = new BindableCollection<IProductModel>();
-        private IProductModel _selectedProduct;
-        private IDataAccessModel _dataAcesserModel;
-        private int _quantityToAdd;
+      
+        public ShellViewModel(AdminViewModel adminVM, CashierViewModel cashierVM, LoginViewModel loginVM)
+        {
+            _adminVM = adminVM;
+            _cashierVM = cashierVM;
+            _loginVM = loginVM;
+            ActivateItem(_loginVM);
 
-        public int QuantityToAdd 
-        {
-            get 
-            {
-                return _quantityToAdd; 
-            } 
-            set 
-            {
-                _quantityToAdd = value;
-                NotifyOfPropertyChange(() => QuantityToAdd);
-             } 
         }
-        public ShellViewModel(IDataAccessModel dataAcesserModel, IProductModel product)
+      
+        public void AdminScreen()
         {
-            _selectedProduct = product;
-            _dataAcesserModel = dataAcesserModel;
-            _productModels = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
-        }
-        public BindableCollection<IProductModel> ProductsList
+            ActivateItem(_adminVM);
+        } 
+        public void CashierScreen()
         {
-            get { return _productModels; }
-            set { _productModels = value; }
-        }
-        public IProductModel SelectedProduct
-        {
-            get { return _selectedProduct; }
-            set
-            {
-                _selectedProduct = value;
-                NotifyOfPropertyChange(() => SelectedProduct);
-            }
-        }
-        public void RemoveProduct()
-        {
-            //TODO REMOVE FROM LIST
-            _dataAcesserModel.RemoveExistingProduct(_selectedProduct.Id);
-            RefreshList();
-        }
-        
-        public void SubmitQuantityChange(int quantityToAdd, IProductModel selectedProduct)
-        {
-            _dataAcesserModel.ChangeQuantityOfProduct(_selectedProduct.Quantity,quantityToAdd,_selectedProduct.Id);
-            QuantityToAdd = 0;
-            RefreshList();
+            ActivateItem(_cashierVM);
         }
 
-        public bool CanSubmitQuantityChange(int quantityToAdd, IProductModel selectedProduct )
+        public void LoginScreen()
         {
-            //TODO if any product selected
-            if (quantityToAdd != 0 && _selectedProduct != null)
-                return true;
-            else 
-                return false;
+            ActivateItem(_loginVM);
         }
-    
-        
 
-        public void RefreshList()
-        {
-            _productModels = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
-            NotifyOfPropertyChange(() => ProductsList);
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

@@ -30,6 +30,8 @@ namespace StoreManagerUI
             _container
                 .PerRequest<IDataAccessModel, DataAccessModel>()
                 .PerRequest<IProductModel, ProductModel>();
+             
+                
                    
 
             GetType().Assembly.GetTypes()

@@ -37,7 +37,9 @@ C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Store
 C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\StoreManagerUI.pdb
 C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\ShellView.g.cs
 C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\ShellView.baml
-C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\AdminOperationsView.g.cs
-C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\CashierOperationsView.g.cs
-C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\AdminOperationsView.baml
-C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\CashierOperationsView.baml
+C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\AdminView.g.cs
+C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\CashierView.g.cs
+C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\AdminView.baml
+C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\CashierView.baml
+C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\LoginView.g.cs
+C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\LoginView.baml
