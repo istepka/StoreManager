@@ -1,8 +1,8 @@
 ## Store Manager *work in progress*
-### Login, administrate, sell products and organise your magazine. 
+### Login, administrate your store and sell products 
 
 ***
-### Working with:
+### Working on:
 * WPF & C#
 * Dependency injection
 * SQLite 
