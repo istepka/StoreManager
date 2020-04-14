@@ -2,15 +2,16 @@
 ### Login, administrate your store and sell products 
 
 ***
-### Working on:
+### Working wtih:
 * WPF & C#
 * Dependency injection
 * SQLite 
 * MVVM pattern 
+* .NET Framework 4.7
 ***
 
 ### NuGets
 * Dapper
-* SQLite
+* SQLite.Core
 * CaliburnMicro
 * Autofac
