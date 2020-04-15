@@ -18,7 +18,10 @@ namespace StoreManagerUI.Models
         }
 
 
-        // private List<Product> products;
+        /// <summary>
+        /// Get products from database
+        /// </summary>
+        /// <returns>List<ProductModel></returns>
         public List<ProductModel> LoadProducts()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -26,7 +29,7 @@ namespace StoreManagerUI.Models
                 var output = cnn.Query<ProductModel>("select * from Products", new DynamicParameters());
                 System.Diagnostics.Debug.WriteLine("DataLoadedSuccesfully");
                 return output.ToList();
-            }
+            }            
         }
 
         public void AddNewProduct(string name, float price, int quantity)
@@ -60,10 +63,13 @@ namespace StoreManagerUI.Models
             }
         }
 
-        public string LoadConnectionString(string id = "Default")
+        public string LoadConnectionString(string id = "Products")
         {
-            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
-        }
+            string cnn = ConfigurationManager.ConnectionStrings[id].ConnectionString;
+
+            string fixedConnectionString = cnn.Replace("{AppDir}", AppDomain.CurrentDomain.BaseDirectory);
+            return fixedConnectionString;   
+         }
 
     }
 }

@@ -34,13 +34,13 @@ namespace StoreManagerUI.ViewModels
             ActivateItem(_loginVM);
         }
       
-        public bool CanAdminScreen()
-        {
-            if (ActiveLoggedUser?.Role == "admin")
-                return true;
-            else
-                return false;
-        }
+        //public bool CanAdminScreen()
+        //{
+        //    if (ActiveLoggedUser?.Role == "admin")
+        //        return true;
+        //    else
+        //        return false;
+        //}
         public void AdminScreen()
         {
             

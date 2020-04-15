@@ -10,25 +10,26 @@ namespace StoreManagerUI.ViewModels
 {
     public class AdminViewModel : Screen
     {
+        #region Private props
         private BindableCollection<IProductModel> _productModels = new BindableCollection<IProductModel>();
         private IProductModel _selectedProduct;
         private IDataAccessModel _dataAcesserModel;
         private int _quantityToAdd;
-
-
+        #endregion
 
         public AdminViewModel(IDataAccessModel dataAcesserModel, IProductModel product)
         {
             _selectedProduct = product;
             _dataAcesserModel = dataAcesserModel;
             _productModels = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
-            
-
         }
+
+        #region Public props and accesers
+
         public BindableCollection<IProductModel> ProductsList
         {
             get { return _productModels; }
-            set { _productModels = value; }
+            set { _productModels = value; NotifyOfPropertyChange(() => ProductsList); }
         }
         public IProductModel SelectedProduct
         {
@@ -37,29 +38,10 @@ namespace StoreManagerUI.ViewModels
             {
                 _selectedProduct = value;
                 NotifyOfPropertyChange(() => SelectedProduct);
+                NotifyOfPropertyChange(() => CanRemoveProduct);
+                NotifyOfPropertyChange(() => CanSubmitQuantityChange);
             }
         }
-        public void RemoveProduct()
-        {
-            //TODO REMOVE FROM LIST
-            _dataAcesserModel.RemoveExistingProduct(_selectedProduct.Id);
-            RefreshList();
-        }
-        public void SubmitQuantityChange(int quantityToAdd, IProductModel selectedProduct)
-        {
-            _dataAcesserModel.ChangeQuantityOfProduct(_selectedProduct.Quantity, quantityToAdd, _selectedProduct.Id);
-            QuantityToAdd = 0;
-            RefreshList();
-        }
-        public bool CanSubmitQuantityChange(int quantityToAdd, IProductModel selectedProduct)
-        {
-            //TODO if any product selected
-            if (quantityToAdd != 0 && _selectedProduct != null)
-                return true;
-            else
-                return false;
-        }
-
         public int QuantityToAdd
         {
             get
@@ -70,26 +52,61 @@ namespace StoreManagerUI.ViewModels
             {
                 _quantityToAdd = value;
                 NotifyOfPropertyChange(() => QuantityToAdd);
+                NotifyOfPropertyChange(() => CanSubmitQuantityChange);
+            }
+        }
+        #endregion
+
+
+        #region Can_Do_Props
+        public bool CanRemoveProduct
+        {
+            get
+            {
+                if (SelectedProduct?.Name.Length > 0)
+                    return true;
+                else
+                    return false;
+            }
+        }
+        public bool CanSubmitQuantityChange
+        {
+            get
+            {
+                //TODO if any product selected
+                if (QuantityToAdd != 0 && SelectedProduct?.Name.Length > 0)
+                    return true;
+                else
+                    return false;
             }
         }
 
+        #endregion
 
 
+        #region Binded voids and interactions
+        public void RemoveProduct()
+        {
+            //TODO REMOVE FROM LIST
+            _dataAcesserModel.RemoveExistingProduct(SelectedProduct.Id);
+            RefreshList();
+        }
+        public void SubmitQuantityChange()
+        {
+            _dataAcesserModel.ChangeQuantityOfProduct(SelectedProduct.Quantity, QuantityToAdd, SelectedProduct.Id);
+            QuantityToAdd = 0;
+            RefreshList();
+        }
+        #endregion
 
+        
 
-
-
-
-
-
-
-
-
+        #region Methods and functions
         public void RefreshList()
         {
             _productModels = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
             NotifyOfPropertyChange(() => ProductsList);
         }
-
+        #endregion
     }
 }
