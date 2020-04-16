@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace StoreManagerUI.ViewModels
 {
@@ -15,6 +16,9 @@ namespace StoreManagerUI.ViewModels
         private IProductModel _selectedProduct;
         private IDataAccessModel _dataAcesserModel;
         private int _quantityToAdd;
+        private string _newProductName = "";
+        private int _newProductPrice = 0;
+        private int _newProductQuantity = 0;
         #endregion
 
         public AdminViewModel(IDataAccessModel dataAcesserModel, IProductModel product)
@@ -55,6 +59,32 @@ namespace StoreManagerUI.ViewModels
                 NotifyOfPropertyChange(() => CanSubmitQuantityChange);
             }
         }
+
+        public string NewProductName
+        {
+            get { return _newProductName; }
+            set { _newProductName = value; NotifyOfPropertyChange(()=> NewProductName); NotifyOfPropertyChange(() => CanSubmitNewProduct); }
+        }
+
+  
+        public int NewProductPrice
+        {
+            get { return _newProductPrice; }
+            set { _newProductPrice = value; NotifyOfPropertyChange(() => NewProductPrice); NotifyOfPropertyChange(() => CanSubmitNewProduct); }
+        }
+
+        
+
+        public int NewProductQuantity
+        {
+            get { return _newProductQuantity; }
+            set { _newProductQuantity = value; NotifyOfPropertyChange(() => NewProductQuantity); NotifyOfPropertyChange(() => CanSubmitNewProduct); }
+        }
+
+
+
+
+
         #endregion
 
 
@@ -80,6 +110,16 @@ namespace StoreManagerUI.ViewModels
                     return false;
             }
         }
+        public bool CanSubmitNewProduct
+        {
+            get
+            {
+                if (NewProductName?.Length > 0 && NewProductPrice > 0 && NewProductQuantity >= 0)
+                    return true;
+                else
+                    return false;
+            }
+        }
 
         #endregion
 
@@ -97,6 +137,19 @@ namespace StoreManagerUI.ViewModels
             QuantityToAdd = 0;
             RefreshList();
         }
+
+
+     
+
+        public void SubmitNewProduct()
+        {
+            _dataAcesserModel.AddNewProduct(NewProductName, NewProductPrice, NewProductQuantity);
+            RefreshList();
+            NewProductName = "";
+            NewProductPrice = 0;
+            NewProductQuantity = 0;
+        }
+
         #endregion
 
         
@@ -107,6 +160,9 @@ namespace StoreManagerUI.ViewModels
             _productModels = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
             NotifyOfPropertyChange(() => ProductsList);
         }
+
+     
+
         #endregion
     }
 }

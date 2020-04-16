@@ -43,6 +43,16 @@ namespace StoreManagerUI.Models
 
             }
         }
+        public void AddNewProduct(ProductModel product)
+        {
+
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("INSERT INTO Products (Name, Price, Quantity) values (@Name, @Price, @Quantity)", product);
+
+
+            }
+        }
 
         public void RemoveExistingProduct(int id)
         {

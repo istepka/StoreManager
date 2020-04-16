@@ -5,19 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StoreManagerUI.Views"
              mc:Ignorable="d" Background="WhiteSmoke"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" Width="684">
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="10"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -25,7 +25,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
         
@@ -33,11 +33,31 @@
 
         <!--#region ROW 1-->
         <!--ROW 1-->
-        <Button x:Name="loadProductsButton" Grid.Column="1" Grid.Row="1" Content="Load products"  Margin="20,10"/>
+        <Button x:Name="loadProductsButton" Grid.Column="1" Grid.Row="1" Content="Reload products"  Margin="0 0 0,0"/>
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="Products in magazine" FontSize="16" FontWeight="SemiBold"  HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="2" Grid.Column="3" Grid.RowSpan="4" Margin="20 0" VerticalAlignment="Center" >
+            <TextBlock Text="Add new product" FontSize="16" FontWeight="SemiBold"/>
+            <StackPanel Orientation="Horizontal" Margin="0 5">
+                <TextBlock  Text="Name"/>
+                <TextBox x:Name="NewProductName" MinWidth="80" Margin="10 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 5">
+                <TextBlock  Text="Price"/>
+                <TextBox x:Name="NewProductPrice" MinWidth="30" Margin="10,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 5">
+                <TextBlock  Text="Quantity"/>
+                <TextBox x:Name="NewProductQuantity" MinWidth="30" Margin="10,0"/>
+            </StackPanel>
+            <Button x:Name="SubmitNewProduct" Content="Submit product"/>
 
 
-        <StackPanel Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" Orientation="Vertical">
-            <ListView  x:Name="ProductsList" SelectedItem="{Binding Path=SelectedProduct, Mode=OneWayToSource}" MaxHeight="250" >
+        </StackPanel>
+        <!--#endregion-->
+
+        <!--#region  ROW 2-->
+        <StackPanel Grid.Row="2" Grid.Column="2" Grid.RowSpan="4" Orientation="Vertical" Margin="10 5">
+            <ListView  x:Name="ProductsList" SelectedItem="{Binding Path=SelectedProduct, Mode=OneWayToSource}" MaxHeight="250" MinHeight="200">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name"  DisplayMemberBinding="{Binding Name}"  Width="150"/>
@@ -56,10 +76,10 @@
                 <TextBox x:Name ="QuantityToAdd" MinHeight="20" MinWidth="30" Margin="10,0"/>
                 <Button x:Name="SubmitQuantityChange"  Content="Submit change" HorizontalAlignment="Right"/>
             </StackPanel>
-
+           
         </StackPanel>
-
         <!--#endregion-->
+
 
 
 

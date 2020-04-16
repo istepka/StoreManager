@@ -40,7 +40,10 @@ namespace StoreManagerUI.Helpers
 
         public string LoadConnectionString(string id = "Users")
         {
-            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
+            string cnn = ConfigurationManager.ConnectionStrings[id].ConnectionString;
+
+            string fixedConnectionString = cnn.Replace("{AppDir}", AppDomain.CurrentDomain.BaseDirectory);
+            return fixedConnectionString;
         }
 
 

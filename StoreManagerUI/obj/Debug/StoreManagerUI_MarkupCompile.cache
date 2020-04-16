@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\ignac\Desktop\storemanager\StoreManagerUI\obj\Debug\
+C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\
 StoreManagerUI
 none
 false
 DEBUG;TRACE
-C:\Users\ignac\Desktop\storemanager\StoreManagerUI\App.xaml
+C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\App.xaml
 4-66969223
 
 22-407795985
-1291641958804
+129-198923200
 Views\AdminView.xaml;Views\CashierView.xaml;Views\LoginView.xaml;Views\ShellView.xaml;
 
 False
