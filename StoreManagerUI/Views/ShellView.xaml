@@ -15,9 +15,10 @@
                 <MenuItem Header="Admin" x:Name="AdminScreen"/>
                 <MenuItem Header="Cashier" x:Name="CashierScreen"/>
             </MenuItem>
-            <MenuItem Header="Log out"  x:Name="LoginScreen" Margin="10 0">
+            <MenuItem Header="{Binding Path=ActiveLoggedUser.Username, Mode=OneWay}" HorizontalAlignment="Right">
+                <MenuItem Header="Log out"  x:Name="LoginScreen" Margin="10 0"/>
             </MenuItem>
-            <TextBlock x:Name="_loginVM_ActiveUser_Username"/>
+            <!--<TextBlock x:Name="ActiveLoggedUser_Username" HorizontalAlignment="Right"/>-->
         </Menu>
 
 

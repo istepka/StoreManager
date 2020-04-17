@@ -36,10 +36,13 @@ namespace StoreManagerUI.ViewModels
             _cashierVM = cashierVM;
             _loginVM = loginVM;
             ActivateItem(_loginVM);
-
+            ActiveLoggedUser = new UserModel() { Username = "No user"};
             _loginVM.LogInEvent += _loginVM_LogInEvent;
         }
 
+        /// <summary>
+        /// Automatically logs into right dashoard
+        /// </summary>
         private void _loginVM_LogInEvent(object sender, LogInEventArgs e)
         {
             ActiveLoggedUser =  e.ActiveUser;
@@ -82,8 +85,8 @@ namespace StoreManagerUI.ViewModels
         public void LoginScreen()
         {
             
-            ActiveLoggedUser = null;
-           
+            ActiveLoggedUser = new UserModel() { Username = "No user"};
+
             ActivateItem(_loginVM);
         }
 

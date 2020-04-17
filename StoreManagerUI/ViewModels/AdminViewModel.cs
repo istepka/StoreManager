@@ -9,6 +9,9 @@ using System.Windows.Controls;
 
 namespace StoreManagerUI.ViewModels
 {
+    /// <summary>
+    /// Admin dashboard VM
+    /// </summary>
     public class AdminViewModel : Conductor<object>
     {
         #region Private props
@@ -133,6 +136,10 @@ namespace StoreManagerUI.ViewModels
             addForm.ProductListChangedEvent += AddForm_ProductListChangedEvent;
         }
 
+
+        /// <summary>
+        /// Captures product list change and refreshes list
+        /// </summary>
         private void AddForm_ProductListChangedEvent(object sender, bool e)
         {
             RefreshList();

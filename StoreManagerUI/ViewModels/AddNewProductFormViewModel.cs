@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace StoreManagerUI.ViewModels
 {
+    /// <summary>
+    /// Form for adding new products VM
+    /// </summary>
     public class AddNewProductFormViewModel : Screen
     {
         public event EventHandler<bool> ProductListChangedEvent;

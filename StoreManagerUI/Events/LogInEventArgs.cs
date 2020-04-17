@@ -11,6 +11,9 @@ namespace StoreManagerUI.Events
     {
 		private bool _loggedSuccesfully = false;
 
+		/// <summary>
+		/// Is validation correct
+		/// </summary>
 		public bool LoggedInSuccesfully
 		{
 			get { return _loggedSuccesfully; }
@@ -19,6 +22,9 @@ namespace StoreManagerUI.Events
 
 		private UserModel _activeUser;
 
+		/// <summary>
+		/// Active logged user
+		/// </summary>
 		public UserModel ActiveUser
 		{
 			get { return _activeUser; }
