@@ -20,9 +20,13 @@ namespace StoreManagerUI.ViewModels
 		private string _password;
 		private string _loginError;
 		private UserModel _activeUser;
-
+		private IUserDBHelper _userDBHelper;
 		#endregion
-	
+
+		public LoginViewModel(IUserDBHelper userDBHelper)
+		{
+			_userDBHelper = userDBHelper;
+		}
 
 		public UserModel ActiveUser
 		{
@@ -72,7 +76,7 @@ namespace StoreManagerUI.ViewModels
 
 		public void LogIn(string username, string password)
 		{
-			UserModel user = new UserDBHelper().GetUser(username, Password);
+			UserModel user = _userDBHelper.GetUser(username, Password);
 			if(user.Role != null)
 			{
 				ActiveUser = user;

@@ -10,6 +10,8 @@ namespace StoreManagerUI.ViewModels
 {
     public class AddNewProductFormViewModel : Screen
     {
+        public event EventHandler<bool> ProductListChangedEvent;
+
         private IDataAccessModel _dataAcesserModel;
         private string _newProductName = "";
         private int _newProductPrice = 0;
@@ -59,6 +61,13 @@ namespace StoreManagerUI.ViewModels
             NewProductName = "";
             NewProductPrice = 0;
             NewProductQuantity = 0;
+            ProductListChangedEvent?.Invoke(this, true);
         }
+
+        //public void CloseForm()
+        //{
+        //    this.Views.Clear();
+        //}
+
     }
 }

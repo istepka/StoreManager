@@ -69,6 +69,7 @@ namespace StoreManagerUI.ViewModels
                     return false;
             }
         }
+
         public void AdminScreen()
         {
             ActivateItem(_adminVM);
@@ -80,6 +81,9 @@ namespace StoreManagerUI.ViewModels
 
         public void LoginScreen()
         {
+            
+            ActiveLoggedUser = null;
+           
             ActivateItem(_loginVM);
         }
 

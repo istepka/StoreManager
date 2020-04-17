@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace StoreManagerUI.Helpers
 {
-    public class UserDBHelper
+    public class UserDBHelper : IUserDBHelper
     {
         public UserModel GetUser(string username, string password)
         {
@@ -19,7 +19,7 @@ namespace StoreManagerUI.Helpers
 
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<UserModel>($"SELECT * FROM Users WHERE EXISTS(SELECT 1 FROM Users WHERE Username = @username)", new { username}).ToList();
+                var output = cnn.Query<UserModel>($"SELECT * FROM Users WHERE EXISTS(SELECT 1 FROM Users WHERE Username = @username)", new { username }).ToList();
                 //output = output.ToList();
                 foreach (var user in output)
                 {
@@ -30,10 +30,10 @@ namespace StoreManagerUI.Helpers
                 }
 
             }
-                return loggedUser;
+            return loggedUser;
         }
 
-        public void AddNewUser()
+        public void AddNewUser(string username, string password, string role = "default")
         {
 
         }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace StoreManagerUI.Events
 {
-    public class LogoutEventArgs : EventArgs
+    public class ProductListChanged : EventArgs
     {
+
+
     }
 }

@@ -35,7 +35,9 @@ namespace StoreManagerUI
 
             _container
                 .PerRequest<IDataAccessModel, DataAccessModel>()
-                .PerRequest<IProductModel, ProductModel>();
+                .PerRequest<IProductModel, ProductModel>()
+                .PerRequest<IUserDBHelper, UserDBHelper>();
+            
              
                 
                    

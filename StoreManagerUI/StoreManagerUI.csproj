@@ -96,11 +96,11 @@
     <Compile Include="Events\LogInEventArgs.cs" />
     <Compile Include="Events\LogoutEventArgs.cs" />
     <Compile Include="Helpers\APIHelper.cs" />
+    <Compile Include="Helpers\IUserDBHelper.cs" />
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
     <Compile Include="Helpers\UserDBHelper.cs" />
     <Compile Include="Models\IDataAccessModel.cs" />
     <Compile Include="Models\IProductModel.cs" />
-    <Compile Include="Models\SessionData.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="ViewModels\AddNewProductFormViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />

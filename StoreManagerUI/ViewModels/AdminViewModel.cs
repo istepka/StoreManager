@@ -16,9 +16,6 @@ namespace StoreManagerUI.ViewModels
         private IProductModel _selectedProduct;
         private IDataAccessModel _dataAcesserModel;
         private int _quantityToAdd;
-        private string _newProductName = "";
-        private int _newProductPrice = 0;
-        private int _newProductQuantity = 0;
         #endregion
 
         public AdminViewModel(IDataAccessModel dataAcesserModel, IProductModel product)
@@ -60,27 +57,6 @@ namespace StoreManagerUI.ViewModels
             }
         }
 
-        public string NewProductName
-        {
-            get { return _newProductName; }
-            set { _newProductName = value; NotifyOfPropertyChange(()=> NewProductName); NotifyOfPropertyChange(() => CanSubmitNewProduct); }
-        }
-
-  
-        public int NewProductPrice
-        {
-            get { return _newProductPrice; }
-            set { _newProductPrice = value; NotifyOfPropertyChange(() => NewProductPrice); NotifyOfPropertyChange(() => CanSubmitNewProduct); }
-        }
-
-        
-
-        public int NewProductQuantity
-        {
-            get { return _newProductQuantity; }
-            set { _newProductQuantity = value; NotifyOfPropertyChange(() => NewProductQuantity); NotifyOfPropertyChange(() => CanSubmitNewProduct); }
-        }
-
 
 
 
@@ -110,16 +86,7 @@ namespace StoreManagerUI.ViewModels
                     return false;
             }
         }
-        public bool CanSubmitNewProduct
-        {
-            get
-            {
-                if (NewProductName?.Length > 0 && NewProductPrice > 0 && NewProductQuantity >= 0)
-                    return true;
-                else
-                    return false;
-            }
-        }
+   
 
         #endregion
 
@@ -141,14 +108,7 @@ namespace StoreManagerUI.ViewModels
 
      
 
-        public void SubmitNewProduct()
-        {
-            _dataAcesserModel.AddNewProduct(NewProductName, NewProductPrice, NewProductQuantity);
-            RefreshList();
-            NewProductName = "";
-            NewProductPrice = 0;
-            NewProductQuantity = 0;
-        }
+   
 
         #endregion
 
@@ -168,7 +128,14 @@ namespace StoreManagerUI.ViewModels
 
         public void AddNewProduct()
         {
-            ActivateItem(new AddNewProductFormViewModel(_dataAcesserModel));
+            AddNewProductFormViewModel addForm = new AddNewProductFormViewModel(_dataAcesserModel);
+            new WindowManager().ShowWindow(addForm);
+            addForm.ProductListChangedEvent += AddForm_ProductListChangedEvent;
+        }
+
+        private void AddForm_ProductListChangedEvent(object sender, bool e)
+        {
+            RefreshList();
         }
     }
 }
