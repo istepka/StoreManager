@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StoreManagerUI.Models
 {
-    public class UserModel
+    public class UserModel : IUserModel
     {
         public string Username { get; set; }
         public string Password { get; set; }

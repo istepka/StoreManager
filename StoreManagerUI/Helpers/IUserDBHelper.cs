@@ -10,7 +10,7 @@ namespace StoreManagerUI.Helpers
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <param name="role">{admin, cashier, default}</param>
-        void AddNewUser(string username, string password, string role = "default");
+        void AddNewUser(string username, string password, Roles.UserRoles role);
         /// <summary>
         /// Checks if user exists in database and returns it's props
         /// </summary>
@@ -19,5 +19,11 @@ namespace StoreManagerUI.Helpers
         /// <returns></returns>
         UserModel GetUser(string username, string password);
         string LoadConnectionString(string id = "Users");
+        
+        /// <summary>
+        /// Modify role of user
+        /// </summary>
+        /// <param name="user"></param>
+        void ModifyRole(UserModel user);
     }
 }

@@ -33,10 +33,24 @@ namespace StoreManagerUI.Helpers
             return loggedUser;
         }
 
-        public void AddNewUser(string username, string password, string role = "default")
+        public void AddNewUser(string username, string password, Roles.UserRoles role)
         {
-
+            UserModel user = new UserModel() { Password = password, Role = role.ToString(), Username = username };
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute($"INSERT INTO Users (Username, Password, Role) values (@Username, @Password, @Role)", user);
+                
+            }
         }
+
+        public void ModifyRole(UserModel user)
+        {
+            using(IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute($"UPDATE Users SET Role ={user.Role} WHERE Username = {user.Username}");
+            }
+        }
+
 
         public string LoadConnectionString(string id = "Users")
         {

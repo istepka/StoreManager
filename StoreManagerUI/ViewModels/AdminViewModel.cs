@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using StoreManagerUI.Helpers;
 using StoreManagerUI.Models;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace StoreManagerUI.ViewModels
             _selectedProduct = product;
             _dataAcesserModel = dataAcesserModel;
             _productModels = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
+         
         }
 
         #region Public props and accesers

@@ -101,8 +101,11 @@
     <Compile Include="Helpers\UserDBHelper.cs" />
     <Compile Include="Models\IDataAccessModel.cs" />
     <Compile Include="Models\IProductModel.cs" />
+    <Compile Include="Models\IUserModel.cs" />
+    <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="ViewModels\AddNewProductFormViewModel.cs" />
+    <Compile Include="ViewModels\AdminAddUserViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\CashierViewModel.cs" />
     <Compile Include="Models\DataAccessModel.cs" />
@@ -111,6 +114,9 @@
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\AddNewProductFormView.xaml.cs">
       <DependentUpon>AddNewProductFormView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminAddUserView.xaml.cs">
+      <DependentUpon>AdminAddUserView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminView.xaml.cs">
       <DependentUpon>AdminView.xaml</DependentUpon>
@@ -158,6 +164,10 @@
   <ItemGroup />
   <ItemGroup>
     <Page Include="Views\AddNewProductFormView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminAddUserView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -90,3 +90,5 @@ C:\Users\ignac\Desktop\storemanager\StoreManagerUI\obj\Debug\StoreManagerUI.exe
 C:\Users\ignac\Desktop\storemanager\StoreManagerUI\obj\Debug\StoreManagerUI.pdb
 C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\AddNewProductFormView.g.cs
 C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\AddNewProductFormView.baml
+C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\AdminAddUserView.g.cs
+C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\obj\Debug\Views\AdminAddUserView.baml

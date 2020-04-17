@@ -26,6 +26,7 @@ namespace StoreManagerUI.ViewModels
 		public LoginViewModel(IUserDBHelper userDBHelper)
 		{
 			_userDBHelper = userDBHelper;
+			new WindowManager().ShowWindow(new AdminAddUserViewModel(_userDBHelper));
 		}
 
 		public UserModel ActiveUser
