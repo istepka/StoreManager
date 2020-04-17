@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using StoreManagerUI.Events;
 using StoreManagerUI.Helpers;
 using StoreManagerUI.Models;
 using System;
@@ -12,6 +13,8 @@ namespace StoreManagerUI.ViewModels
 {
     public class LoginViewModel : Screen
     {
+		public event EventHandler<LogInEventArgs> LogInEvent;
+
         #region Privates
         private string _username;
 		private string _password;
@@ -72,15 +75,17 @@ namespace StoreManagerUI.ViewModels
 			UserModel user = new UserDBHelper().GetUser(username, Password);
 			if(user.Role != null)
 			{
-				//Console.WriteLine("Succeded");
-				SessionData.Username = user.Username;
-				SessionData.Role = user.Role;
+				ActiveUser = user;
 				LoginError = "Login succeded";
+				Username = ""; Password = "";
+				LogInEvent?.Invoke(this, new LogInEventArgs(true, ActiveUser));
 			}
 			else
 			{
 				LoginError = "Login failed, try again";
 				Password = "";
+				ActiveUser = null;
+				LogInEvent?.Invoke(this, new LogInEventArgs(false));
 			}
 		}
 

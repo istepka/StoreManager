@@ -9,7 +9,7 @@ using System.Windows.Controls;
 
 namespace StoreManagerUI.ViewModels
 {
-    public class AdminViewModel : Screen
+    public class AdminViewModel : Conductor<object>
     {
         #region Private props
         private BindableCollection<IProductModel> _productModels = new BindableCollection<IProductModel>();
@@ -164,5 +164,11 @@ namespace StoreManagerUI.ViewModels
      
 
         #endregion
+
+
+        public void AddNewProduct()
+        {
+            ActivateItem(new AddNewProductFormViewModel(_dataAcesserModel));
+        }
     }
 }

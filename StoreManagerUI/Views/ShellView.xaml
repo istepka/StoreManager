@@ -15,7 +15,7 @@
                 <MenuItem Header="Admin" x:Name="AdminScreen"/>
                 <MenuItem Header="Cashier" x:Name="CashierScreen"/>
             </MenuItem>
-            <MenuItem Header="Account"  x:Name="LoginScreen"  >
+            <MenuItem Header="Log out"  x:Name="LoginScreen" Margin="10 0">
             </MenuItem>
             <TextBlock x:Name="_loginVM_ActiveUser_Username"/>
         </Menu>

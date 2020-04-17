@@ -93,6 +93,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Events\LogInEventArgs.cs" />
+    <Compile Include="Events\LogoutEventArgs.cs" />
     <Compile Include="Helpers\APIHelper.cs" />
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
     <Compile Include="Helpers\UserDBHelper.cs" />
@@ -100,12 +102,16 @@
     <Compile Include="Models\IProductModel.cs" />
     <Compile Include="Models\SessionData.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="ViewModels\AddNewProductFormViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\CashierViewModel.cs" />
     <Compile Include="Models\DataAccessModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="Views\AddNewProductFormView.xaml.cs">
+      <DependentUpon>AddNewProductFormView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminView.xaml.cs">
       <DependentUpon>AdminView.xaml</DependentUpon>
     </Compile>
@@ -151,6 +157,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="Views\AddNewProductFormView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AdminView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

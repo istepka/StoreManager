@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using StoreManagerUI.Events;
 using StoreManagerUI.Models;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,10 @@ namespace StoreManagerUI.ViewModels
         public UserModel ActiveLoggedUser
         {
             get { return _activeLoggedUser; }
-            set { _activeLoggedUser = value; NotifyOfPropertyChange(() => ActiveLoggedUser); }
+            set { _activeLoggedUser = value; 
+                NotifyOfPropertyChange(() => ActiveLoggedUser); 
+                NotifyOfPropertyChange(() => CanAdminScreen); 
+                NotifyOfPropertyChange(() => CanCashierScreen); }
         }
 
 
@@ -32,18 +36,41 @@ namespace StoreManagerUI.ViewModels
             _cashierVM = cashierVM;
             _loginVM = loginVM;
             ActivateItem(_loginVM);
+
+            _loginVM.LogInEvent += _loginVM_LogInEvent;
         }
-      
-        //public bool CanAdminScreen()
-        //{
-        //    if (ActiveLoggedUser?.Role == "admin")
-        //        return true;
-        //    else
-        //        return false;
-        //}
+
+        private void _loginVM_LogInEvent(object sender, LogInEventArgs e)
+        {
+            ActiveLoggedUser =  e.ActiveUser;
+            if (e.ActiveUser?.Role == "admin")
+                AdminScreen();
+            else if (e.ActiveUser?.Role == "cashier")
+                CashierScreen();
+        }
+
+        public bool CanAdminScreen
+        {
+            get
+            {
+                if (ActiveLoggedUser?.Role == "admin")
+                    return true;
+                else
+                    return false;
+            }
+        }
+        public bool CanCashierScreen
+        {
+            get
+            {
+                if (ActiveLoggedUser?.Role == "cashier" || ActiveLoggedUser?.Role == "admin")
+                    return true;
+                else
+                    return false;
+            }
+        }
         public void AdminScreen()
         {
-            
             ActivateItem(_adminVM);
         } 
         public void CashierScreen()

@@ -28,14 +28,20 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
+
+
+        <TextBlock Text="Admin view" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" FontSize="20" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+
+
+        <!--#region ROW 2-->
         
+        <Button x:Name="loadProductsButton" Grid.Column="1" Grid.Row="2" Content="Reload products"  Margin="0 0 0,0"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="Products in magazine" FontSize="16" FontWeight="SemiBold"  HorizontalAlignment="Center"/>
+        
+        <!--#endregion-->
 
-
-        <!--#region ROW 1-->
-        <!--ROW 1-->
-        <Button x:Name="loadProductsButton" Grid.Column="1" Grid.Row="1" Content="Reload products"  Margin="0 0 0,0"/>
-        <TextBlock Grid.Row="1" Grid.Column="2" Text="Products in magazine" FontSize="16" FontWeight="SemiBold"  HorizontalAlignment="Center"/>
-        <StackPanel Grid.Row="2" Grid.Column="3" Grid.RowSpan="4" Margin="20 0" VerticalAlignment="Center" >
+        <!--#region  ROW 3-->
+        <StackPanel Grid.Row="3" Grid.Column="3" Grid.RowSpan="4" Margin="20 0" VerticalAlignment="Center" >
             <TextBlock Text="Add new product" FontSize="16" FontWeight="SemiBold"/>
             <StackPanel Orientation="Horizontal" Margin="0 5">
                 <TextBlock  Text="Name"/>
@@ -53,10 +59,7 @@
 
 
         </StackPanel>
-        <!--#endregion-->
-
-        <!--#region  ROW 2-->
-        <StackPanel Grid.Row="2" Grid.Column="2" Grid.RowSpan="4" Orientation="Vertical" Margin="10 5">
+        <StackPanel Grid.Row="3" Grid.Column="2" Grid.RowSpan="4" Orientation="Vertical" Margin="10 5">
             <ListView  x:Name="ProductsList" SelectedItem="{Binding Path=SelectedProduct, Mode=OneWayToSource}" MaxHeight="250" MinHeight="200">
                 <ListView.View>
                     <GridView>
@@ -76,9 +79,13 @@
                 <TextBox x:Name ="QuantityToAdd" MinHeight="20" MinWidth="30" Margin="10,0"/>
                 <Button x:Name="SubmitQuantityChange"  Content="Submit change" HorizontalAlignment="Right"/>
             </StackPanel>
-           
+
+            <Button x:Name="AddNewProduct" Content="Add new product" Margin="0 10"/>
+
         </StackPanel>
         <!--#endregion-->
+
+        <ContentControl x:Name="ActiveItem" Grid.Column="3" Grid.Row="3" MinHeight="50" MinWidth="50"/>
 
 
 

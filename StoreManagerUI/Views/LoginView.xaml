@@ -41,7 +41,7 @@
             <TextBlock Text="TPassword" Margin="0 15 0 0"/>
             <PasswordBox x:Name="Password" />
             <Button x:Name="LogIn"  Content="Log in" Margin="30,10"/>
-            <TextBlock x:Name="LoginError" FontSize="16" />
+            <TextBlock x:Name="LoginError" FontSize="16"  />
 
         </StackPanel>
        

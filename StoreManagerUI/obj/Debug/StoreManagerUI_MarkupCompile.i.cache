@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Ignacy\source\repos\StoreManagerSolution\StoreManagerUI\App.xaml
-4-66969223
+51943748052
 
-232056112512
+27-53387024
 129-198923200
-Views\AdminView.xaml;Views\CashierView.xaml;Views\LoginView.xaml;Views\ShellView.xaml;
+Views\AddNewProductFormView.xaml;Views\AdminView.xaml;Views\CashierView.xaml;Views\LoginView.xaml;Views\ShellView.xaml;
 
 True
 
