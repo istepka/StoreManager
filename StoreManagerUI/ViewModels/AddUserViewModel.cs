@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace StoreManagerUI.ViewModels
 {
-    public class AdminAddUserViewModel : Screen
+    public class AddUserViewModel : Screen
     {
         private IUserDBHelper _userDBHelper;
         private Roles.UserRoles _selectedRole;
 
 
-        public AdminAddUserViewModel(IUserDBHelper  userDBHelper)
+        public AddUserViewModel(IUserDBHelper  userDBHelper)
         {
             _userDBHelper = userDBHelper;
         }

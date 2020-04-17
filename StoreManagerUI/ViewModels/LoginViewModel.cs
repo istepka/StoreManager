@@ -26,8 +26,10 @@ namespace StoreManagerUI.ViewModels
 		public LoginViewModel(IUserDBHelper userDBHelper)
 		{
 			_userDBHelper = userDBHelper;
-			new WindowManager().ShowWindow(new AdminAddUserViewModel(_userDBHelper));
+			LoginError = "";
 		}
+
+		
 
 		public UserModel ActiveUser
 		{
@@ -82,7 +84,7 @@ namespace StoreManagerUI.ViewModels
 			{
 				ActiveUser = user;
 				LoginError = "Login succeded";
-				Username = ""; Password = "";
+				Username = ""; //Password = "";
 				LogInEvent?.Invoke(this, new LogInEventArgs(true, ActiveUser));
 			}
 			else
@@ -94,8 +96,18 @@ namespace StoreManagerUI.ViewModels
 			}
 		}
 
-	
 
+
+
+		protected override void OnDeactivate(bool close)
+		{
+			base.OnDeactivate(close);
+			LoginError = "";
+			ActiveUser = null;
+			//TODO PASSWORD ISSUE
+			//Password = "";
+			Username = "";
+		}
 
 	}
 }

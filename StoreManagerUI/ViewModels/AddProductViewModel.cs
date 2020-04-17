@@ -11,7 +11,7 @@ namespace StoreManagerUI.ViewModels
     /// <summary>
     /// Form for adding new products VM
     /// </summary>
-    public class AddNewProductFormViewModel : Screen
+    public class AddProductViewModel : Screen
     {
         public event EventHandler<bool> ProductListChangedEvent;
 
@@ -20,7 +20,7 @@ namespace StoreManagerUI.ViewModels
         private int _newProductPrice = 0;
         private int _newProductQuantity = 0;
 
-        public AddNewProductFormViewModel(IDataAccessModel dataAccessModel)
+        public AddProductViewModel(IDataAccessModel dataAccessModel)
         {
             _dataAcesserModel = dataAccessModel;
         }

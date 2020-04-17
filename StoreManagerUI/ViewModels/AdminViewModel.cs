@@ -133,7 +133,7 @@ namespace StoreManagerUI.ViewModels
 
         public void AddNewProduct()
         {
-            AddNewProductFormViewModel addForm = new AddNewProductFormViewModel(_dataAcesserModel);
+            AddProductViewModel addForm = new AddProductViewModel(_dataAcesserModel);
             new WindowManager().ShowWindow(addForm);
             addForm.ProductListChangedEvent += AddForm_ProductListChangedEvent;
         }

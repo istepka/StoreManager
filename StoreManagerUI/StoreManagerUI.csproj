@@ -104,16 +104,17 @@
     <Compile Include="Models\IUserModel.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\UserModel.cs" />
-    <Compile Include="ViewModels\AddNewProductFormViewModel.cs" />
-    <Compile Include="ViewModels\AdminAddUserViewModel.cs" />
+    <Compile Include="ViewModels\AddProductViewModel.cs" />
+    <Compile Include="ViewModels\AddUserViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\CashierViewModel.cs" />
     <Compile Include="Models\DataAccessModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="ViewModels\DashboardAdminViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
-    <Compile Include="Views\AddNewProductFormView.xaml.cs">
-      <DependentUpon>AddNewProductFormView.xaml</DependentUpon>
+    <Compile Include="Views\AddProductView.xaml.cs">
+      <DependentUpon>AddProductView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminAddUserView.xaml.cs">
       <DependentUpon>AdminAddUserView.xaml</DependentUpon>
@@ -123,6 +124,9 @@
     </Compile>
     <Compile Include="Views\CashierView.xaml.cs">
       <DependentUpon>CashierView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardAdminView.xaml.cs">
+      <DependentUpon>DashboardAdminView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -163,7 +167,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Page Include="Views\AddNewProductFormView.xaml">
+    <Page Include="Views\AddProductView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,6 +180,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CashierView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardAdminView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

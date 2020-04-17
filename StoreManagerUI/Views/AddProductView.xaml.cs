@@ -18,9 +18,9 @@ namespace StoreManagerUI.Views
     /// <summary>
     /// Interaction logic for AddNewProductFormView.xaml
     /// </summary>
-    public partial class AddNewProductFormView : UserControl
+    public partial class AddProductView : UserControl
     {
-        public AddNewProductFormView()
+        public AddProductView()
         {
             InitializeComponent();
         }

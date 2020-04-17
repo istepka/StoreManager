@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace StoreManagerUI.ViewModels
 {
-    public class ShellViewModel : Conductor<object>
+    public class ShellViewModel : Conductor<object>.Collection.OneActive
     {
-        private AdminViewModel _adminVM;
+        private DashboardAdminViewModel _dashboardVM;
         private CashierViewModel _cashierVM;
         private LoginViewModel _loginVM;
 
@@ -30,9 +30,9 @@ namespace StoreManagerUI.ViewModels
 
 
 
-        public ShellViewModel(AdminViewModel adminVM, CashierViewModel cashierVM, LoginViewModel loginVM)
+        public ShellViewModel(DashboardAdminViewModel dashboardVM, CashierViewModel cashierVM, LoginViewModel loginVM)
         {
-            _adminVM = adminVM;
+            _dashboardVM = dashboardVM;
             _cashierVM = cashierVM;
             _loginVM = loginVM;
             ActivateItem(_loginVM);
@@ -50,6 +50,11 @@ namespace StoreManagerUI.ViewModels
                 AdminScreen();
             else if (e.ActiveUser?.Role == "cashier")
                 CashierScreen();
+            
+            if(e.LoggedInSuccesfully == true)
+            {
+                DeactivateItem(_loginVM, true);
+            }
         }
 
         public bool CanAdminScreen
@@ -75,7 +80,7 @@ namespace StoreManagerUI.ViewModels
 
         public void AdminScreen()
         {
-            ActivateItem(_adminVM);
+            ActivateItem(_dashboardVM);
         } 
         public void CashierScreen()
         {

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace StoreManagerUI.Views
 {
     /// <summary>
-    /// Interaction logic for AdminDashboardViewModel.xaml
+    /// Interaction logic for DashboardAdminView.xaml
     /// </summary>
-    public partial class AddUserView : UserControl
+    public partial class DashboardAdminView : UserControl
     {
-        public AddUserView()
+        public DashboardAdminView()
         {
             InitializeComponent();
         }
