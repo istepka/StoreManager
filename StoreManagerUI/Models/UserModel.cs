@@ -12,5 +12,13 @@ namespace StoreManagerUI.Models
         public string Password { get; set; }
         public int Id { get; set; }
         public string Role { get; set; }
+
+        public string BasicOverview
+        {
+            get
+            {
+                return $"{ Username} | {Role}";
+            }
+        }
     }
 }

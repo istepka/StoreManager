@@ -6,5 +6,6 @@
         string Password { get; set; }
         string Role { get; set; }
         string Username { get; set; }
+        string BasicOverview { get; }
     }
 }

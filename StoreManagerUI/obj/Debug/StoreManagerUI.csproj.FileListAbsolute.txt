@@ -168,7 +168,6 @@ C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\bin\Debug\System.Data.S
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\StoreManagerUI.csprojAssemblyReference.cache
-C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\AdminAddUserView.g.cs
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\AdminView.g.cs
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\CashierView.g.cs
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\DashboardAdminView.g.cs
@@ -179,7 +178,6 @@ C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\GeneratedInte
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\StoreManagerUI_MarkupCompile.cache
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\StoreManagerUI_MarkupCompile.lref
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\App.baml
-C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\AdminAddUserView.baml
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\AdminView.baml
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\CashierView.baml
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\DashboardAdminView.baml
@@ -196,3 +194,7 @@ C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\AddProd
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\AddProductView.baml
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\BlankScreenView.g.cs
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\BlankScreenView.baml
+C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\AddUserView.g.cs
+C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\AddUserView.baml
+C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\UserManagementView.g.cs
+C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\UserManagementView.baml

@@ -114,11 +114,12 @@
     <Compile Include="ViewModels\DashboardAdminViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\UserManagementViewModel.cs" />
     <Compile Include="Views\AddProductView.xaml.cs">
       <DependentUpon>AddProductView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AdminAddUserView.xaml.cs">
-      <DependentUpon>AdminAddUserView.xaml</DependentUpon>
+    <Compile Include="Views\AddUserView.xaml.cs">
+      <DependentUpon>AddUserView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminView.xaml.cs">
       <DependentUpon>AdminView.xaml</DependentUpon>
@@ -137,6 +138,9 @@
     </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserManagementView.xaml.cs">
+      <DependentUpon>UserManagementView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -175,7 +179,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AdminAddUserView.xaml">
+    <Page Include="Views\AddUserView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,6 +204,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserManagementView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
