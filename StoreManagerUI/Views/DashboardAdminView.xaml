@@ -7,10 +7,10 @@
              mc:Ignorable="d" BorderBrush="Black" BorderThickness="2"
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <Menu DockPanel.Dock="Top" MinWidth="50" Background="Gray" MaxWidth="400" HorizontalAlignment="Right">
+        <Menu DockPanel.Dock="Top" MinWidth="50" Background="Gray" MaxWidth="400" HorizontalAlignment="Right" Cursor="Hand" >
             <MenuItem Header="Products" x:Name="ProductManager"/>
             <MenuItem Header="Users" x:Name="UsersManager"/>
-            <MenuItem Header="New Product" x:Name="NewProduct"/>
+            <!--<MenuItem Header="New Product" x:Name="NewProduct"/>-->
         </Menu>
         <ContentControl x:Name="ActiveItem"/>
 

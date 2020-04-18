@@ -20,6 +20,8 @@ namespace StoreManagerUI.ViewModels
         private IProductModel _selectedProduct;
         private IDataAccessModel _dataAcesserModel;
         private int _quantityToAdd;
+        private decimal _newPrice;
+        AddProductViewModel _addForm;
         #endregion
 
         public AdminViewModel(IDataAccessModel dataAcesserModel, IProductModel product)
@@ -27,15 +29,29 @@ namespace StoreManagerUI.ViewModels
             _selectedProduct = product;
             _dataAcesserModel = dataAcesserModel;
             _productModels = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
+          
          
         }
 
         #region Public props and accesers
+       
+
+        public decimal NewPrice
+        {
+            get { return _newPrice; }
+            set { _newPrice = value;
+                NotifyOfPropertyChange(() => NewPrice); 
+                NotifyOfPropertyChange(() => CanSubmitNewPrice); 
+            }
+        }
+
 
         public BindableCollection<IProductModel> ProductsList
         {
             get { return _productModels; }
-            set { _productModels = value; NotifyOfPropertyChange(() => ProductsList); }
+            set { _productModels = value; 
+                NotifyOfPropertyChange(() => ProductsList);
+            }
         }
         public IProductModel SelectedProduct
         {
@@ -46,6 +62,7 @@ namespace StoreManagerUI.ViewModels
                 NotifyOfPropertyChange(() => SelectedProduct);
                 NotifyOfPropertyChange(() => CanRemoveProduct);
                 NotifyOfPropertyChange(() => CanSubmitQuantityChange);
+                NotifyOfPropertyChange(() => CanSubmitNewPrice);
             }
         }
         public int QuantityToAdd
@@ -91,7 +108,17 @@ namespace StoreManagerUI.ViewModels
                     return false;
             }
         }
-   
+        
+        public bool CanSubmitNewPrice
+        {
+            get
+            {
+                if (SelectedProduct?.Name.Length > 0 && NewPrice >= 0)
+                    return true;
+                else
+                    return false;
+            }
+        }
 
         #endregion
 
@@ -133,9 +160,19 @@ namespace StoreManagerUI.ViewModels
 
         public void AddNewProduct()
         {
-            AddProductViewModel addForm = new AddProductViewModel(_dataAcesserModel);
-            new WindowManager().ShowWindow(addForm);
-            addForm.ProductListChangedEvent += AddForm_ProductListChangedEvent;
+             _addForm = new AddProductViewModel(_dataAcesserModel);
+            //new WindowManager().ShowWindow(addForm);
+            ActivateItem(_addForm);
+
+            _addForm.ProductListChangedEvent += AddForm_ProductListChangedEvent;
+        }
+
+        public void SubmitNewPrice()
+        {
+            SelectedProduct.Price = NewPrice;
+            _dataAcesserModel.ChangeProductPrice(SelectedProduct);
+            NewPrice = 0;
+            RefreshList();
         }
 
 
@@ -145,6 +182,10 @@ namespace StoreManagerUI.ViewModels
         private void AddForm_ProductListChangedEvent(object sender, bool e)
         {
             RefreshList();
+            DeactivateItem(_addForm, true);
         }
+
+
+        
     }
 }

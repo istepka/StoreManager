@@ -27,10 +27,10 @@ namespace StoreManagerUI.ViewModels
             ActivateItem(new AdminViewModel(_dataAccessModel, _productModel));
         }
 
-        public void NewProduct()
-        {
-            ActivateItem(new AddProductViewModel(_dataAccessModel));
-        }
+        //public void NewProduct()
+        //{
+        //    ActivateItem(new AddProductViewModel(_dataAccessModel));
+        //}
 
         public void UsersManager()
         {

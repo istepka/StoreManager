@@ -14,6 +14,7 @@ namespace StoreManagerUI.ViewModels
         private DashboardAdminViewModel _dashboardVM;
         private CashierViewModel _cashierVM;
         private LoginViewModel _loginVM;
+        private BlankScreenViewModel _blankVM;
 
 
         private UserModel _activeLoggedUser;
@@ -30,11 +31,12 @@ namespace StoreManagerUI.ViewModels
 
 
 
-        public ShellViewModel(DashboardAdminViewModel dashboardVM, CashierViewModel cashierVM, LoginViewModel loginVM)
+        public ShellViewModel(DashboardAdminViewModel dashboardVM, CashierViewModel cashierVM, LoginViewModel loginVM, BlankScreenViewModel blankVM)
         {
             _dashboardVM = dashboardVM;
             _cashierVM = cashierVM;
             _loginVM = loginVM;
+            _blankVM = blankVM;
             ActivateItem(_loginVM);
             ActiveLoggedUser = new UserModel() { Username = "No user"};
             _loginVM.LogInEvent += _loginVM_LogInEvent;
@@ -50,6 +52,8 @@ namespace StoreManagerUI.ViewModels
                 AdminScreen();
             else if (e.ActiveUser?.Role == "cashier")
                 CashierScreen();
+            else
+                BlankScreen();
             
             if(e.LoggedInSuccesfully == true)
             {
@@ -93,6 +97,10 @@ namespace StoreManagerUI.ViewModels
             ActiveLoggedUser = new UserModel() { Username = "No user"};
 
             ActivateItem(_loginVM);
+        }
+        public void BlankScreen()
+        {
+            ActivateItem(_blankVM);
         }
 
 

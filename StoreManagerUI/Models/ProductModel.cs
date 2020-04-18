@@ -8,33 +8,31 @@ namespace StoreManagerUI.Models
 {
     public class ProductModel : IProductModel
     {
-        /// <summary>
-        /// Id of product
-        /// </summary>
+       
         public int Id { get; set; }
-        /// <summary>
-        /// Name of product
-        /// </summary>
+   
         public string Name { get; set; }
-        /// <summary>
-        /// Price of product 
-        /// </summary>
-        public float Price { get; set; }
-        /// <summary>
-        /// Quantity actually stored in magazine
-        /// </summary>
+       
+        public decimal Price { get; set; }
+        
         public int Quantity { get; set; } = 0;
 
-        /// <summary>
-        /// Returns name, price and quantity of product
-        /// </summary>
+       
         public string ProductOverview
         {
             get
             {
-                return $"{Name} | {Price.ToString("C")} | {Quantity}";
+                return $"{Name} | {Price.ToString("C2")} | {Quantity}";
             }
 
+        }
+
+        public string PriceString
+        {
+            get
+            {
+                return $"{Price.ToString("C2")}";
+            }
         }
 
     }

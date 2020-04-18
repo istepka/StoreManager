@@ -32,7 +32,7 @@ namespace StoreManagerUI.Models
             }            
         }
 
-        public void AddNewProduct(string name, float price, int quantity)
+        public void AddNewProduct(string name, decimal price, int quantity)
         {
             var product = new ProductModel() { Name = name, Price = price, Quantity = quantity };
 
@@ -70,6 +70,14 @@ namespace StoreManagerUI.Models
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 cnn.Execute($"UPDATE Products SET Quantity = {quantity+actualQuantity} WHERE Id = {id}");
+            }
+        }
+
+        public void ChangeProductPrice(IProductModel productModel)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute($"UPDATE Products SET Price = {productModel.Price} WHERE Id = {productModel.Id}");
             }
         }
 

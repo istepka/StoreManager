@@ -107,6 +107,7 @@
     <Compile Include="ViewModels\AddProductViewModel.cs" />
     <Compile Include="ViewModels\AddUserViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\BlankScreenViewModel.cs" />
     <Compile Include="ViewModels\CashierViewModel.cs" />
     <Compile Include="Models\DataAccessModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
@@ -121,6 +122,9 @@
     </Compile>
     <Compile Include="Views\AdminView.xaml.cs">
       <DependentUpon>AdminView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BlankScreenView.xaml.cs">
+      <DependentUpon>BlankScreenView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CashierView.xaml.cs">
       <DependentUpon>CashierView.xaml</DependentUpon>
@@ -176,6 +180,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BlankScreenView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

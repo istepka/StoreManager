@@ -194,3 +194,5 @@ C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\StoreManagerU
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\StoreManagerUI.pdb
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\AddProductView.g.cs
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\AddProductView.baml
+C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\BlankScreenView.g.cs
+C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\BlankScreenView.baml

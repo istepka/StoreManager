@@ -17,8 +17,8 @@ namespace StoreManagerUI.ViewModels
 
         private IDataAccessModel _dataAcesserModel;
         private string _newProductName = "";
-        private int _newProductPrice = 0;
-        private int _newProductQuantity = 0;
+        private decimal _newProductPrice;
+        private int _newProductQuantity;
 
         public AddProductViewModel(IDataAccessModel dataAccessModel)
         {
@@ -32,7 +32,7 @@ namespace StoreManagerUI.ViewModels
         }
 
 
-        public int NewProductPrice
+        public decimal NewProductPrice
         {
             get { return _newProductPrice; }
             set { _newProductPrice = value; NotifyOfPropertyChange(() => NewProductPrice); NotifyOfPropertyChange(() => CanSubmitNewProduct); }
@@ -52,7 +52,7 @@ namespace StoreManagerUI.ViewModels
         {
             get
             {
-                if (NewProductName?.Length > 0 && NewProductPrice > 0 && NewProductQuantity >= 0)
+               if (NewProductName?.Length > 0 && NewProductPrice > 0 && NewProductQuantity >= 0)
                     return true;
                 else
                     return false;
@@ -60,17 +60,27 @@ namespace StoreManagerUI.ViewModels
         }
         public void SubmitNewProduct()
         {
-            _dataAcesserModel.AddNewProduct(NewProductName, NewProductPrice, NewProductQuantity);
+            _dataAcesserModel.AddNewProduct(new ProductModel() {Name= NewProductName,Price = NewProductPrice, Quantity= NewProductQuantity });
             NewProductName = "";
             NewProductPrice = 0;
             NewProductQuantity = 0;
             ProductListChangedEvent?.Invoke(this, true);
+
+            
         }
 
-        //public void CloseForm()
-        //{
-        //    this.Views.Clear();
-        //}
+        public void CloseForm()
+        {
+            NewProductName = "";
+            //NewProductPrice = 0;
+            //NewProductQuantity = 0;
+            ProductListChangedEvent?.Invoke(this, true);
+        }
+
+        protected override void OnDeactivate(bool close)
+        {
+            base.OnDeactivate(close);
+        }
 
     }
 }

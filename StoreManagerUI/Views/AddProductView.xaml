@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:StoreManagerUI.Views"
-             mc:Ignorable="d" Background="White" Width="250" Height="296.25" BorderBrush="#FF191818">
-   
-   
+             xmlns:local="clr-namespace:StoreManagerUI.Views" Background="WhiteSmoke"
+             mc:Ignorable="d"  Width="327.148" Height="386.406" BorderBrush="#FF191818">
+
+
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -19,6 +19,8 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -31,24 +33,26 @@
 
         <!--<Button x:Name="CloseForm" Grid.Column="2" Grid.Row="6" Content="Close" Background="#FFAC4242" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
 
-        <TextBlock Text="Add new product" FontSize="16" FontWeight="SemiBold" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Margin="0 40 0 0"/>
-        <StackPanel Orientation="Horizontal" Margin="0 15 0 5" Grid.Row="2" Grid.Column="2">
+        <Button x:Name="CloseForm" Content="Close" Grid.Column="2" Grid.Row="7" Background="#FFFF9474" Cursor="Hand"/>
+        
+        <TextBlock Text="Add new product" FontSize="16" FontWeight="SemiBold" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 0"/>
+        <StackPanel Orientation="Horizontal" Margin="0 15 0 5" Grid.Row="3" Grid.Column="2">
             <TextBlock  Text="Name"/>
             <TextBox x:Name="NewProductName" MinWidth="80" Margin="10 0"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0 15" Grid.Row="3" Grid.Column="2">
+        <StackPanel Orientation="Horizontal" Margin="0 15" Grid.Row="4" Grid.Column="2">
             <TextBlock  Text="Price"/>
-            <TextBox x:Name="NewProductPrice" MinWidth="30" Margin="10,0"/>
+            <TextBox  MinWidth="35" Margin="10,0" Text="{Binding NewProductPrice, Mode=TwoWay,StringFormat=N2}"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0 5" Grid.Row="4" Grid.Column="2">
+        <StackPanel Orientation="Horizontal" Margin="0 5" Grid.Row="5" Grid.Column="2">
             <TextBlock  Text="Quantity"/>
-            <TextBox x:Name="NewProductQuantity" MinWidth="30" Margin="10,0"/>
+            <TextBox x:Name="NewProductQuantity" MinWidth="40" Margin="10,0"/>
         </StackPanel>
-        <Button x:Name="SubmitNewProduct" Content="Submit product" Grid.Row="5" Grid.Column="2" Margin="0 15"/>
-        <TextBlock x:Name="ErrorMessage" Grid.Row="6" Grid.Column="2" Margin="0"/>
+        <Button x:Name="SubmitNewProduct" Content="Submit product" Grid.Row="6" Grid.Column="2" Margin="0 15" Cursor="Hand"/>
+        <TextBlock x:Name="ErrorMessage" Grid.Row="8" Grid.Column="2" Margin="0"/>
 
 
 
     </Grid>
-   
+
 </UserControl>

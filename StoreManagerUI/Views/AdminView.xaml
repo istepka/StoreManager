@@ -4,13 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StoreManagerUI.Views"
-             mc:Ignorable="d" Background="WhiteSmoke"
+             mc:Ignorable="d" 
              d:DesignHeight="450" Width="684">
     <Grid>
-
+       
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
@@ -24,51 +25,63 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        
 
-        <TextBlock Text="Admin view" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" FontSize="20" HorizontalAlignment="Center" FontWeight="DemiBold"/>
 
+
+
+        <Border Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="Black" Margin="0 0 0 10">
+            <TextBlock Text="Product management view"  FontSize="20" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+        </Border>
 
         <!--#region ROW 2-->
-        
-        <Button x:Name="ReloadProducts" Grid.Column="2" Grid.Row="7" Content="Reload products"  Margin="0 0 0,0"/>
+        <ContentControl Grid.Row="2" Grid.Column="2" Grid.RowSpan="6" x:Name="ActiveItem"/>
         <TextBlock Grid.Row="2" Grid.Column="2" Text="Products in magazine" FontSize="16" FontWeight="SemiBold"  HorizontalAlignment="Center"/>
         
         <!--#endregion-->
 
         <!--#region  ROW 3-->
-        <StackPanel Grid.Row="3" Grid.Column="2" Grid.RowSpan="4" Orientation="Vertical" Margin="10 5">
-            <ListView  x:Name="ProductsList" SelectedItem="{Binding Path=SelectedProduct, Mode=OneWayToSource}" MaxHeight="250" MinHeight="200">
+        <StackPanel Grid.Row="3" Grid.Column="2" Grid.RowSpan="4" Orientation="Vertical" Margin="40 5" >
+            <ListView  x:Name="ProductsList" SelectedItem="{Binding Path=SelectedProduct, Mode=OneWayToSource}" MaxHeight="300" MinHeight="200" Grid.RowSpan="4">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name"  DisplayMemberBinding="{Binding Name}"  Width="150"/>
-                        <GridViewColumn Header="Price"  DisplayMemberBinding="{Binding Price}" Width="60"/>
+                        <GridViewColumn Header="Price"  DisplayMemberBinding="{Binding PriceString}" Width="60"/>
                         <GridViewColumn Header="In stock"  DisplayMemberBinding="{Binding Quantity}" />
                     </GridView>
                 </ListView.View>
             </ListView>
+        </StackPanel>
+        
+       
+        <TextBlock x:Name="SelectedProduct_ProductOverview" HorizontalAlignment="Right"  FontSize="14" Grid.Row="2" Grid.Column="3"/>
+        <TextBlock Text="Selected product: " HorizontalAlignment="Left"  FontSize="14" Grid.Row="2" Grid.Column="3"/>
 
-            <TextBlock x:Name="SelectedProduct_ProductOverview" HorizontalAlignment="Center"/>
+        <Button  x:Name="RemoveProduct" Content="Remove selected product" Margin="0,10,0,5" Grid.Row="3" Grid.Column="3" Cursor="Hand"/>
 
-            <Button  x:Name="RemoveProduct" Content="Remove selected product" Margin="0,10,0,10"/>
-
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Add quantity"/>
-                <TextBox x:Name ="QuantityToAdd" MinHeight="20" MinWidth="30" Margin="10,0"/>
-                <Button x:Name="SubmitQuantityChange"  Content="Submit change" HorizontalAlignment="Right"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="3" Grid.Row="4" Margin="0 5">
+                <TextBlock Text="Add quantity" VerticalAlignment="Center"/>
+                <TextBox x:Name ="QuantityToAdd" MinHeight="20" MinWidth="30" Margin="10,0" MaxHeight="30"/>
+                <Button x:Name="SubmitQuantityChange"  Content="Submit change" HorizontalAlignment="Right" MaxHeight="30" Cursor="Hand"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="3" Grid.Row="5" Margin="0 5">
+                <TextBlock Text="Set new price" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding NewPrice, Mode=TwoWay,StringFormat=N2}" MinHeight="20" MinWidth="30" Margin="10,0" MaxHeight="30"/>
+                <Button x:Name="SubmitNewPrice"  Content="Submit price" HorizontalAlignment="Right" Margin="0" MaxHeight="30" Cursor="Hand"/>
             </StackPanel>
 
-            <Button x:Name="AddNewProduct" Content="Add new product" Margin="0 10"/>
+        <Button x:Name="AddNewProduct" Content="Add new product" Margin="0 10" Grid.Column="3" Grid.Row="6" Cursor="Hand"/>
 
-        </StackPanel>
+        
         <!--#endregion-->
 
-        <ContentControl x:Name="ActiveItem" Grid.Column="2" Grid.Row="1" Grid.RowSpan="5"/>
+        
 
+        <Button x:Name="ReloadProducts" Grid.Column="3" Grid.Row="7" Content="Reload products"  Margin="0 0 0,0" Cursor="Hand"/>
 
 
 

@@ -10,7 +10,7 @@ namespace StoreManagerUI.Models
         /// <param name="name"></param>
         /// <param name="price"></param>
         /// <param name="quantity"></param>
-        void AddNewProduct(string name, float price, int quantity);
+        void AddNewProduct(string name, decimal price, int quantity);
         /// <summary>
         /// Adds new product to db
         /// </summary>
@@ -29,5 +29,11 @@ namespace StoreManagerUI.Models
         /// </summary>
         /// <param name="id"></param>
         void RemoveExistingProduct(int id);
+
+        /// <summary>
+        /// Change price of existing product
+        /// </summary>
+        /// <param name="productModel"></param>
+        void ChangeProductPrice(IProductModel productModel);
     }
 }

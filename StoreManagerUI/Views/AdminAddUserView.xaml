@@ -42,7 +42,7 @@
             <TextBlock Text="Role" />
             <ComboBox x:Name="RolesList" SelectedItem="{Binding Path=SelectedRole, Mode=OneWayToSource}" Margin="10 0 0 0 " MinWidth="100"/>
         </StackPanel>
-        <Button x:Name="AddUser" Content="Add" Grid.Column="3" Grid.Row="6" Margin="10 10"/>
+        <Button x:Name="AddUser" Content="Add" Grid.Column="3" Grid.Row="6" Margin="10 10" Cursor="Hand"/>
 
 
 
