@@ -1,12 +1,12 @@
 ﻿
 FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\App.xaml;;
-FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\AddProductView.xaml;;
-FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\AddUserView.xaml;;
-FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\AdminView.xaml;;
-FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\BlankScreenView.xaml;;
-FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\CashierView.xaml;;
-FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\DashboardAdminView.xaml;;
-FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\LoginView.xaml;;
+FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\Admin\Products\AddProductView.xaml;;
+FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\Admin\Users\AddUserView.xaml;;
+FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\Admin\Products\AdminView.xaml;;
+FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\Login\BlankScreenView.xaml;;
+FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\Cashier\CashierView.xaml;;
+FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\Admin\DashboardAdminView.xaml;;
+FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\Login\LoginView.xaml;;
 FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\ShellView.xaml;;
-FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\UserManagementView.xaml;;
+FC:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\Views\Admin\Users\UserManagementView.xaml;;
 

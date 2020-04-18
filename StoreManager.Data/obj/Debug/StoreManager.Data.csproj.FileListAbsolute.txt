@@ -1,0 +1,6 @@
+C:\Users\Ignacy\source\repos\storemanager\StoreManager.Data\bin\Debug\StoreManager.Data.dll
+C:\Users\Ignacy\source\repos\storemanager\StoreManager.Data\bin\Debug\StoreManager.Data.pdb
+C:\Users\Ignacy\source\repos\storemanager\StoreManager.Data\obj\Debug\StoreManager.Data.csprojAssemblyReference.cache
+C:\Users\Ignacy\source\repos\storemanager\StoreManager.Data\obj\Debug\StoreManager.Data.csproj.CoreCompileInputs.cache
+C:\Users\Ignacy\source\repos\storemanager\StoreManager.Data\obj\Debug\StoreManager.Data.dll
+C:\Users\Ignacy\source\repos\storemanager\StoreManager.Data\obj\Debug\StoreManager.Data.pdb

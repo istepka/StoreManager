@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\App.xaml
-9-1097758512
+91740719110
 
-36178152226
+36155210266
 1291237827874
-Views\AddProductView.xaml;Views\AddUserView.xaml;Views\AdminView.xaml;Views\BlankScreenView.xaml;Views\CashierView.xaml;Views\DashboardAdminView.xaml;Views\LoginView.xaml;Views\ShellView.xaml;Views\UserManagementView.xaml;
+Views\Admin\Products\AddProductView.xaml;Views\Admin\Users\AddUserView.xaml;Views\Admin\Products\AdminView.xaml;Views\Login\BlankScreenView.xaml;Views\Cashier\CashierView.xaml;Views\Admin\DashboardAdminView.xaml;Views\Login\LoginView.xaml;Views\ShellView.xaml;Views\Admin\Users\UserManagementView.xaml;
 
 False
 

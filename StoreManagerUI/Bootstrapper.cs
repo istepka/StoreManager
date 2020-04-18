@@ -34,7 +34,7 @@ namespace StoreManagerUI
                 .Singleton<IEventAggregator, EventAggregator>();
 
             _container
-                .PerRequest<IDataAccessModel, DataAccessModel>()
+                .PerRequest<IProductDBHelper, ProductDBHelper>()
                 .PerRequest<IProductModel, ProductModel>()
                 .PerRequest<IUserDBHelper, UserDBHelper>();
             
