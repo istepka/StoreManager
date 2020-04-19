@@ -11,11 +11,11 @@
 
     <DockPanel>
         <Menu  DockPanel.Dock="Top" FontSize="20" >
-            <MenuItem Header="Change View" >
+            <MenuItem Header="Change View" BorderBrush="DimGray" BorderThickness="1" >
                 <MenuItem Header="Admin" x:Name="AdminScreen"/>
                 <MenuItem Header="Cashier" x:Name="CashierScreen"/>
             </MenuItem>
-            <MenuItem Header="{Binding Path=ActiveLoggedUser.Username, Mode=OneWay}" HorizontalAlignment="Right">
+            <MenuItem Header="{Binding Path=ActiveUserOnBar, Mode=OneWay}" HorizontalAlignment="Right" BorderBrush="DimGray" BorderThickness="1">
                 <MenuItem Header="Log out"  x:Name="LoginScreen" Margin="10 0"/>
             </MenuItem>
             <!--<TextBlock x:Name="ActiveLoggedUser_Username" HorizontalAlignment="Right"/>-->

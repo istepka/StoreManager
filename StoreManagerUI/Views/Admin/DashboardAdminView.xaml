@@ -12,7 +12,7 @@
             <MenuItem Header="Users" x:Name="UsersManager"/>
             <!--<MenuItem Header="New Product" x:Name="NewProduct"/>-->
         </Menu>
-        <ContentControl x:Name="ActiveItem"/>
+        <ContentControl x:Name="ActiveItem" HorizontalAlignment="Left"/>
 
         <!--<TextBlock Text="Admin dashboard" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>-->
 

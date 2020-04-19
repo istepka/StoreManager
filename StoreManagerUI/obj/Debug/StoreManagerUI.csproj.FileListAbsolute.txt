@@ -198,3 +198,7 @@ C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\Login\L
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\Login\BlankScreenView.baml
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\Cashier\CashierView.baml
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\Login\LoginView.baml
+C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\bin\Debug\StoreManager.Core.dll
+C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\bin\Debug\StoreManager.Data.dll
+C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\bin\Debug\StoreManager.Core.pdb
+C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\bin\Debug\StoreManager.Data.pdb

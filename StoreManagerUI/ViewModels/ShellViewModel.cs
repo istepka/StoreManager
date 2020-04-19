@@ -22,10 +22,19 @@ namespace StoreManagerUI.ViewModels
         public UserModel ActiveLoggedUser
         {
             get { return _activeLoggedUser; }
-            set { _activeLoggedUser = value; 
+            set { _activeLoggedUser = value;
+                ActiveUserOnBar = "User: " + value.Username;
                 NotifyOfPropertyChange(() => ActiveLoggedUser); 
                 NotifyOfPropertyChange(() => CanAdminScreen); 
-                NotifyOfPropertyChange(() => CanCashierScreen); }
+                NotifyOfPropertyChange(() => CanCashierScreen); 
+                NotifyOfPropertyChange(() => ActiveUserOnBar); 
+            }
+        }
+
+        public string ActiveUserOnBar
+        {
+            get;
+            set;
         }
 
 

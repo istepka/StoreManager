@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StoreManagerUI.Views" Background="WhiteSmoke"
-             mc:Ignorable="d"  Width="327.148" Height="325.406" BorderBrush="#FF191818">
+             mc:Ignorable="d"  Width="289.862" Height="344.389" BorderBrush="#FF191818">
 
 
     <Grid>
@@ -34,7 +34,7 @@
         <!--<Button x:Name="CloseForm" Grid.Column="2" Grid.Row="6" Content="Close" Background="#FFAC4242" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
 
         <Button x:Name="CloseForm" Content="Close" Grid.Column="2" Grid.Row="7" Background="#FFFF9474" Cursor="Hand"/>
-        
+
         <TextBlock Text="Add new product" FontSize="16" FontWeight="SemiBold" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 0"/>
         <StackPanel Orientation="Horizontal" Margin="0 15 0 5" Grid.Row="3" Grid.Column="2">
             <TextBlock  Text="Name"/>

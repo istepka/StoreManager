@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,8 +85,11 @@ namespace StoreManagerUI.Models
         public string LoadConnectionString(string id = "Products")
         {
             string cnn = ConfigurationManager.ConnectionStrings[id].ConnectionString;
+            string path = Directory.GetCurrentDirectory();
+            int i = path.IndexOf("StoreManagerUI");
+            path = path.Substring(0, path.Length - (path.Length - i)) + "StoreManager.Data\\";
 
-            string fixedConnectionString = cnn.Replace("{AppDir}", AppDomain.CurrentDomain.BaseDirectory);
+            string fixedConnectionString = cnn.Replace("{AppDir}", path);
             return fixedConnectionString;   
          }
 
