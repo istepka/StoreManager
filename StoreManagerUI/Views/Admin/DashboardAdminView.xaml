@@ -10,11 +10,12 @@
         <Menu DockPanel.Dock="Top" MinWidth="50" Background="Gray" MaxWidth="400" HorizontalAlignment="Right" Cursor="Hand" >
             <MenuItem Header="Products" x:Name="ProductManager"/>
             <MenuItem Header="Users" x:Name="UsersManager"/>
+            <MenuItem Header="Dashboard" x:Name="DashboardWelcome"/>
             <!--<MenuItem Header="New Product" x:Name="NewProduct"/>-->
         </Menu>
         <ContentControl x:Name="ActiveItem" HorizontalAlignment="Left"/>
 
-        <!--<TextBlock Text="Admin dashboard" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>-->
+        
 
 
     </DockPanel>

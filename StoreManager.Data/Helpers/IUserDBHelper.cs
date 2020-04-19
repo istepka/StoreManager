@@ -1,4 +1,5 @@
 ﻿using StoreManagerUI.Models;
+using System.Collections.Generic;
 
 namespace StoreManagerUI.Helpers
 {
@@ -18,12 +19,15 @@ namespace StoreManagerUI.Helpers
         /// <param name="password"></param>
         /// <returns></returns>
         UserModel GetUser(string username, string password);
+        List<UserModel> GetUsersList();
         string LoadConnectionString(string id = "Users");
         
         /// <summary>
         /// Modify role of user
         /// </summary>
         /// <param name="user"></param>
-        void ModifyRole(UserModel user);
+        //void ModifyRole(UserModel user);
+        void ModifyRole(IUserModel user);
+        void RemoveUser(IUserModel user);
     }
 }

@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:StoreManagerUI.Views"
-             mc:Ignorable="d" Width="275.938" Height="264.375">
+             xmlns:local="clr-namespace:StoreManagerUI.Views" Background="WhiteSmoke"
+             mc:Ignorable="d" Width="367.368" Height="351.398">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -17,6 +17,8 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -43,6 +45,7 @@
             <ComboBox x:Name="RolesList" SelectedItem="{Binding Path=SelectedRole, Mode=OneWayToSource}" Margin="10 0 0 0 " MinWidth="100"/>
         </StackPanel>
         <Button x:Name="AddUser" Content="Add" Grid.Column="3" Grid.Row="6" Margin="10 10" Cursor="Hand"/>
+        <Button x:Name="Close" Content="Close" Grid.Column="3" Grid.Row="7" Margin="10 10" Cursor="Hand"/>
 
 
 

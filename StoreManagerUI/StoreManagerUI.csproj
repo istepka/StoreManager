@@ -91,6 +91,7 @@
     <Compile Include="Events\LogoutEventArgs.cs" />
     <Compile Include="Helpers\API\APIHelper.cs" />
     <Compile Include="Helpers\Core\PasswordBoxHelper.cs" />
+    <Compile Include="ViewModels\Admin\DashboardWelcomeViewModel.cs" />
     <Compile Include="ViewModels\Admin\Products\AddProductViewModel.cs" />
     <Compile Include="ViewModels\Admin\Users\AddUserViewModel.cs" />
     <Compile Include="ViewModels\Admin\Products\AdminViewModel.cs" />
@@ -100,6 +101,9 @@
     <Compile Include="ViewModels\Login\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\Admin\Users\UserManagementViewModel.cs" />
+    <Compile Include="Views\Admin\DashboardWelcomeView.xaml.cs">
+      <DependentUpon>DashboardWelcomeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin\Products\AddProductView.xaml.cs">
       <DependentUpon>AddProductView.xaml</DependentUpon>
     </Compile>
@@ -167,6 +171,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\Admin\DashboardWelcomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Admin\Products\AddProductView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

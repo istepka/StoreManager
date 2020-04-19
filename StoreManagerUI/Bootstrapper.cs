@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Caliburn.Micro;
+using StoreManager.Data.Validators;
 using StoreManagerUI.Helpers;
 using StoreManagerUI.Models;
 using StoreManagerUI.ViewModels;
@@ -36,7 +37,8 @@ namespace StoreManagerUI
             _container
                 .PerRequest<IProductDBHelper, ProductDBHelper>()
                 .PerRequest<IProductModel, ProductModel>()
-                .PerRequest<IUserDBHelper, UserDBHelper>();
+                .PerRequest<IUserDBHelper, UserDBHelper>()
+                .PerRequest<IUserValidator, UserValidator>();
             
              
                 

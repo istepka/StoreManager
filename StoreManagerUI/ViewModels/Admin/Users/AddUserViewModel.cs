@@ -13,7 +13,7 @@ namespace StoreManagerUI.ViewModels
     {
         private IUserDBHelper _userDBHelper;
         private RolesModel.UserRoles _selectedRole;
-
+        public event EventHandler<bool> CloseAddUserTab;
 
         public AddUserViewModel(IUserDBHelper  userDBHelper)
         {
@@ -63,7 +63,7 @@ namespace StoreManagerUI.ViewModels
         {
             get
             {
-                if (Password?.Length > 0 && Username?.Length > 0)
+                if (Password?.Length > 0 && Username?.Length > 0 && SelectedRole.ToString() != null)
                     return true;
                 else
                     return false;
@@ -72,12 +72,19 @@ namespace StoreManagerUI.ViewModels
 
         public void AddUser()
         {
+           
             _userDBHelper.AddNewUser(Username, Password, SelectedRole);
+            Username = "";
+            Password = "";
+            SelectedRole = default;
         }
 
 
 
-
+        public void Close()
+        {
+            CloseAddUserTab.Invoke(null, true);
+        }
 
 
     }

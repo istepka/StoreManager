@@ -34,7 +34,7 @@ namespace StoreManagerUI.Helpers
             return loggedUser;
         }
 
-        public void AddNewUser(string username, string password, RolesModel.UserRoles role)
+        public void AddNewUser(string username, string password, RolesModel.UserRoles role = RolesModel.UserRoles.random)
         {
             UserModel user = new UserModel() { Password = password, Role = role.ToString(), Username = username };
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -44,14 +44,32 @@ namespace StoreManagerUI.Helpers
             }
         }
 
-        public void ModifyRole(UserModel user)
+        public void ModifyRole(IUserModel user)
         {
             using(IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute($"UPDATE Users SET Role ={user.Role} WHERE Username = {user.Username}");
+                cnn.Execute($"UPDATE Users SET Role = @Role WHERE Id = @Id", user);
             }
         }
 
+
+        public List<UserModel> GetUsersList()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<UserModel>("select * from Users", new DynamicParameters());
+                System.Diagnostics.Debug.WriteLine("DataLoadedSuccesfully");
+                return output.ToList();
+            }
+        }
+
+        public void RemoveUser(IUserModel user)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute($"DELETE FROM Users WHERE Id = {user.Id}");
+            }
+        }
 
         public string LoadConnectionString(string id = "Users")
         {

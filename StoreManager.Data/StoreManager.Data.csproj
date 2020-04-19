@@ -56,6 +56,8 @@
     <Compile Include="Helpers\ProductDBHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\UserDBHelper.cs" />
+    <Compile Include="Validators\IUserValidator.cs" />
+    <Compile Include="Validators\UserValidator.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StoreManagerUI.ViewModels
 {
-    public class UserManagementViewModel : Screen
+    public class UserManagementViewModel : Conductor<object>
     {
         private IUserDBHelper _userDBHelper;
         private IUserModel _selectedUser;
@@ -19,8 +19,8 @@ namespace StoreManagerUI.ViewModels
         public UserManagementViewModel(IUserDBHelper userDBHelper)
         {
             _userDBHelper = userDBHelper;
-           
 
+            UsersList = new BindableCollection<IUserModel>(_userDBHelper.GetUsersList());
 
         }
 
@@ -30,7 +30,11 @@ namespace StoreManagerUI.ViewModels
         public IUserModel SelectedUser
         {
             get { return _selectedUser; }
-            set { _selectedUser = value;  }
+            set { _selectedUser = value; 
+                NotifyOfPropertyChange(()=>SelectedUser); 
+                NotifyOfPropertyChange(()=>CanRemoveSelectedUser); 
+                //NotifyOfPropertyChange(()=>CanApplyChanges); 
+            }
         }
 
       
@@ -38,7 +42,9 @@ namespace StoreManagerUI.ViewModels
         public BindableCollection<IUserModel> UsersList
         {
             get { return _usersList; }
-            set { _usersList = value; }
+            set { _usersList = value;
+                NotifyOfPropertyChange(() => UsersList);
+            }
         }
        
         public RolesModel.UserRoles SelectedRole
@@ -48,19 +54,80 @@ namespace StoreManagerUI.ViewModels
             {
                 _selectedRole = value;
                 NotifyOfPropertyChange(() => SelectedRole);
+                NotifyOfPropertyChange(() => CanApplyChanges);
             }
         }
 
         public List<RolesModel.UserRoles> Roles { get; set; } = Enum.GetValues(typeof(RolesModel.UserRoles)).Cast<RolesModel.UserRoles>().ToList();
 
 
+        public bool CanApplyChanges
+        {
+            get
+            {
+                if (SelectedUser?.Role != null)
+                    return true;
+                else
+                    return false;
+            }
+        }
+
         public void ApplyChanges()
         {
+            SelectedUser.Role = SelectedRole.ToString();
+            IUserModel userModel = SelectedUser;   
+            
+            _userDBHelper.ModifyRole(userModel);
+            RefreshList();
+        }
 
+        private AddUserViewModel _addUserVM;
+         public void AddNewUser()
+        {
+            _addUserVM = new AddUserViewModel(_userDBHelper);
+            ActivateItem(_addUserVM);
+            _addUserVM.CloseAddUserTab += AddUserVM_CloseAddUserTab;
+        }
+
+        private void AddUserVM_CloseAddUserTab(object sender, bool e)
+        {
+            if (e == true)
+                DeactivateItem(_addUserVM, true);
+            RefreshList();
+                
         }
 
 
 
+        public bool CanRemoveSelectedUser
+        {
+            get
+            {
+                if (SelectedUser != null)
+                    return true;
+                else
+                    return false;
+            }
+        }
+
+        public void RemoveSelectedUser()
+        {
+            _userDBHelper.RemoveUser(SelectedUser);
+            RefreshList();
+        }
+
+
+
+
+
+
+
+
+        public void RefreshList()
+        {
+            UsersList = new BindableCollection<IUserModel>(_userDBHelper.GetUsersList());
+            NotifyOfPropertyChange(() => UsersList);
+        }
 
     }
 }
