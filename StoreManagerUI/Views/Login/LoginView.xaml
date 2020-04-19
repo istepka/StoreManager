@@ -44,7 +44,9 @@
             <TextBlock x:Name="LoginError" FontSize="16"  />
 
         </StackPanel>
-       
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="If you are new :" HorizontalAlignment="Left" FontSize="14" Margin="30 0"/>
+        <Button x:Name="SignUp" Content="Sign up" Grid.Column="2" Grid.Row="4" Margin="30 0"/>
+
 
     </Grid>
 </UserControl>

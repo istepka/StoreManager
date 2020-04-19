@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StoreManager.Data.Validators
+namespace StoreManager.Core.Validators
 {
     public class UserValidator : IUserValidator
     {
@@ -33,7 +33,7 @@ namespace StoreManager.Data.Validators
 
         public bool ValidatePassword(string password)
         {
-            if (password.Length > 6)
+            if (password.Length > 5)
                 return true;
             else
                 return false;

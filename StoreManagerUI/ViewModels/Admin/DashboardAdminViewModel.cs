@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using StoreManager.Core.Validators;
 using StoreManagerUI.Helpers;
 using StoreManagerUI.Models;
 using StoreManagerUI.ViewModels.Admin;
@@ -18,14 +19,15 @@ namespace StoreManagerUI.ViewModels
         private AdminViewModel _adminVM;
         private UserManagementViewModel _userManagementVM;
         private DashboardWelcomeViewModel _dashboardWelcomeVM;
+        private IUserValidator _userValidator;
 
-        public DashboardAdminViewModel(IUserDBHelper userDBHelper, IProductDBHelper dataAccessModel, IProductModel productModel)
+        public DashboardAdminViewModel(IUserDBHelper userDBHelper, IProductDBHelper dataAccessModel, IProductModel productModel, IUserValidator userValidator)
         {
             _dataAccessModel = dataAccessModel;
             _productModel = productModel;
             _userDBHelper = userDBHelper;
             _dashboardWelcomeVM = new DashboardWelcomeViewModel();
-
+            _userValidator = userValidator;
 
             DashboardWelcome();
             _dashboardWelcomeVM.ActivateProductsTab += _dashboardWelcomeVM_ActivateProductsTab;
@@ -55,7 +57,7 @@ namespace StoreManagerUI.ViewModels
 
         public void UsersManager()
         {
-            _userManagementVM = new UserManagementViewModel(_userDBHelper);
+            _userManagementVM = new UserManagementViewModel(_userDBHelper, _userValidator);
             ActivateItem(_userManagementVM);
         }
 

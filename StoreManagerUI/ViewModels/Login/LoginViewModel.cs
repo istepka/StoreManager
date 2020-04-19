@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using StoreManager.Core.Validators;
 using StoreManagerUI.Events;
 using StoreManagerUI.Helpers;
 using StoreManagerUI.Models;
@@ -21,12 +22,14 @@ namespace StoreManagerUI.ViewModels
 		private string _loginError;
 		private UserModel _activeUser;
 		private IUserDBHelper _userDBHelper;
+		private IUserValidator _userValidator;
 		#endregion
 
-		public LoginViewModel(IUserDBHelper userDBHelper)
+		public LoginViewModel(IUserDBHelper userDBHelper, IUserValidator userValidator)
 		{
 			_userDBHelper = userDBHelper;
 			LoginError = "";
+			_userValidator = userValidator;
 		}
 
 		
@@ -79,25 +82,45 @@ namespace StoreManagerUI.ViewModels
 
 		public void LogIn(string username, string password)
 		{
-			UserModel user = _userDBHelper.GetUser(username, Password);
-			if(user.Role != null)
-			{
-				ActiveUser = user;
-				LoginError = "Login succeded";
-				Username = ""; //Password = "";
-				LogInEvent?.Invoke(this, new LogInEventArgs(true, ActiveUser));
-			}
-			else
-			{
-				LoginError = "Login failed, try again";
-				Password = "";
-				ActiveUser = null;
-				LogInEvent?.Invoke(this, new LogInEventArgs(false));
-			}
+			
+				UserModel user = _userDBHelper.GetUser(username, Password);
+				if (user.Role != null)
+				{
+					ActiveUser = user;
+					LoginError = "Login succeded";
+					Username = ""; //Password = "";
+					LogInEvent?.Invoke(this, new LogInEventArgs(true, ActiveUser));
+				}
+				else
+				{
+					LoginError = "Login failed, try again";
+					Password = "";
+					ActiveUser = null;
+					LogInEvent?.Invoke(this, new LogInEventArgs(false));
+				}
+		
+			
+
 		}
 
 
+		//public bool ValidateUser(string username, string password)
+		//{
+		//	if (_userValidator.ValidatePassword(password) == false)
+		//	{
+		//		LoginError = "Password length should have minimum 6 letters";
+		//		return false;
+		//	}
+		//	if (_userValidator.ValidateUsername(username) == false)
+		//	{
+		//		LoginError = "Username taken or too short (min 3 letters)";
+		//		return false;
+		//	}
+		//	else
+		//		return true;
 
+
+		//}
 
 		protected override void OnDeactivate(bool close)
 		{

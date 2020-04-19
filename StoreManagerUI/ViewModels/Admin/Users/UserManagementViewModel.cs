@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using StoreManager.Core.Validators;
 using StoreManagerUI.Helpers;
 using StoreManagerUI.Models;
 using System;
@@ -15,11 +16,12 @@ namespace StoreManagerUI.ViewModels
         private IUserModel _selectedUser;
         private BindableCollection<IUserModel> _usersList;
         private RolesModel.UserRoles _selectedRole;
+        private IUserValidator _userValidator;
 
-        public UserManagementViewModel(IUserDBHelper userDBHelper)
+        public UserManagementViewModel(IUserDBHelper userDBHelper, IUserValidator userValidator)
         {
             _userDBHelper = userDBHelper;
-
+            _userValidator = userValidator;
             UsersList = new BindableCollection<IUserModel>(_userDBHelper.GetUsersList());
 
         }
@@ -84,7 +86,7 @@ namespace StoreManagerUI.ViewModels
         private AddUserViewModel _addUserVM;
          public void AddNewUser()
         {
-            _addUserVM = new AddUserViewModel(_userDBHelper);
+            _addUserVM = new AddUserViewModel(_userDBHelper, _userValidator);
             ActivateItem(_addUserVM);
             _addUserVM.CloseAddUserTab += AddUserVM_CloseAddUserTab;
         }

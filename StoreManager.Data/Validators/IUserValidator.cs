@@ -1,4 +1,4 @@
-﻿namespace StoreManager.Data.Validators
+﻿namespace StoreManager.Core.Validators
 {
     public interface IUserValidator
     {

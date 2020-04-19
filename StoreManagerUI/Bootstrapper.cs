@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using Caliburn.Micro;
-using StoreManager.Data.Validators;
+using StoreManager.Core.Validators;
 using StoreManagerUI.Helpers;
 using StoreManagerUI.Models;
 using StoreManagerUI.ViewModels;

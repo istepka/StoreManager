@@ -30,12 +30,17 @@
         </Grid.RowDefinitions>
 
 
-        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" Margin="30 0">
+        <Border Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="Black" Margin="0 0 0 10">
+            <TextBlock Text="User management view"  FontSize="20" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+        </Border>
+
+
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" Margin="100 0">
             <TextBlock Text="Search by username: "/>
             <TextBox x:Name="SearchedUser" MinWidth="150"/>
         </StackPanel>
         
-        <ListView x:Name="UsersList" SelectedItem="{Binding Path=SelectedUser, Mode=OneWayToSource}" Grid.Column="2" Grid.Row="2" Grid.RowSpan="5" Margin="30 0">
+        <ListView x:Name="UsersList" SelectedItem="{Binding Path=SelectedUser, Mode=OneWayToSource}" Grid.Column="2" Grid.Row="3" Grid.RowSpan="5" Margin="100 0 30 0">
             <ListView.View >
                 <GridView>
                     <GridViewColumn Header="Username" DisplayMemberBinding="{Binding Username}" Width="150"/>
@@ -61,7 +66,7 @@
         <Button x:Name="RemoveSelectedUser" Content="Remove selected user" Grid.Column="3" Grid.Row="6" Margin="10"/>
         <Button x:Name="AddNewUser" Content="Add new user" Grid.Column="3" Grid.Row="7" Margin="10"/>
 
-        <ContentControl x:Name="ActiveItem" Grid.Row="1" Grid.RowSpan="7" Grid.Column="2"/>
+        <ContentControl x:Name="ActiveItem" Grid.Row="2" Grid.RowSpan="6" Grid.Column="2"/>
 
     </Grid>
 </UserControl>
