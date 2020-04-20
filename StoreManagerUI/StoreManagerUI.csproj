@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="Events\LogInEventArgs.cs" />
     <Compile Include="Events\LogoutEventArgs.cs" />
+    <Compile Include="Events\SignUpEventArgs.cs" />
     <Compile Include="Helpers\API\APIHelper.cs" />
     <Compile Include="Helpers\Core\PasswordBoxHelper.cs" />
     <Compile Include="ViewModels\Admin\DashboardWelcomeViewModel.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="ViewModels\Cashier\CashierViewModel.cs" />
     <Compile Include="ViewModels\Admin\DashboardAdminViewModel.cs" />
     <Compile Include="ViewModels\Login\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Login\SignUpViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\Admin\Users\UserManagementViewModel.cs" />
     <Compile Include="Views\Admin\DashboardWelcomeView.xaml.cs">
@@ -124,6 +126,9 @@
     </Compile>
     <Compile Include="Views\Login\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\SignUpView.xaml.cs">
+      <DependentUpon>SignUpView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
@@ -200,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Login\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Login\SignUpView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

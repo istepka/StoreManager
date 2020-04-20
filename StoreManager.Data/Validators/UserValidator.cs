@@ -18,13 +18,13 @@ namespace StoreManager.Core.Validators
 
         public bool ValidateUsername(string username)
         {
-            if (username.Length < 3)
+            if (username?.Length < 3)
                 return false;
 
             List<IUserModel> users = new List<IUserModel>(_userDBHelper.GetUsersList());
             foreach (var user in users)
             {
-                if (username == user.Username)
+                if (username == user?.Username)
                     return false;
             }
 
@@ -33,7 +33,7 @@ namespace StoreManager.Core.Validators
 
         public bool ValidatePassword(string password)
         {
-            if (password.Length > 5)
+            if (password?.Length > 5)
                 return true;
             else
                 return false;

@@ -204,3 +204,5 @@ C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\bin\Debug\StoreManager.
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\bin\Debug\StoreManager.Data.pdb
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\Admin\DashboardWelcomeView.g.cs
 C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\Admin\DashboardWelcomeView.baml
+C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\Login\SignUpView.g.cs
+C:\Users\Ignacy\source\repos\storemanager\StoreManagerUI\obj\Debug\Views\Login\SignUpView.baml

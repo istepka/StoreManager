@@ -3,6 +3,7 @@ using StoreManager.Core.Validators;
 using StoreManagerUI.Events;
 using StoreManagerUI.Helpers;
 using StoreManagerUI.Models;
+using StoreManagerUI.ViewModels.Login;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,11 @@ using System.Windows.Controls;
 
 namespace StoreManagerUI.ViewModels
 {
-    public class LoginViewModel : Screen
+    public class LoginViewModel : Conductor<object>.Collection.OneActive
     {
 		public event EventHandler<LogInEventArgs> LogInEvent;
+		private SignUpViewModel _signUpVM;
+		
 
         #region Privates
         private string _username;
@@ -30,6 +33,8 @@ namespace StoreManagerUI.ViewModels
 			_userDBHelper = userDBHelper;
 			LoginError = "";
 			_userValidator = userValidator;
+			
+
 		}
 
 		
@@ -102,6 +107,29 @@ namespace StoreManagerUI.ViewModels
 			
 
 		}
+
+		public void SignUp()
+		{
+			_signUpVM = new SignUpViewModel(_userValidator, _userDBHelper);
+			ActivateItem(_signUpVM);
+			_signUpVM.SignUpEvent += _signUpVM_SignUpEvent;
+		}
+
+		private void _signUpVM_SignUpEvent(object sender, SignUpEventArgs e)
+		{
+			if(e.CloseSignUpProcess == true)
+			{
+				DeactivateItem(_signUpVM, true);
+				
+			}
+			else if(e.SignedUpSuccesfully == true)
+			{
+				DeactivateItem(_signUpVM, true);
+				LoginError = "Signed up succesfully, you can now log in";
+				
+			}
+		}
+
 
 
 		//public bool ValidateUser(string username, string password)

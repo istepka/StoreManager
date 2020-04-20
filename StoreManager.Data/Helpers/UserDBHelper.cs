@@ -34,7 +34,7 @@ namespace StoreManagerUI.Helpers
             return loggedUser;
         }
 
-        public void AddNewUser(string username, string password, RolesModel.UserRoles role = RolesModel.UserRoles.random)
+        public void AddNewUser(string username, string password, RolesModel.UserRoles role = RolesModel.UserRoles.blank)
         {
             UserModel user = new UserModel() { Password = password, Role = role.ToString(), Username = username };
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))

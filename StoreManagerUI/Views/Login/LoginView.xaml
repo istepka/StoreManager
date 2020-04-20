@@ -48,5 +48,6 @@
         <Button x:Name="SignUp" Content="Sign up" Grid.Column="2" Grid.Row="4" Margin="30 0"/>
 
 
+        <ContentControl x:Name="ActiveItem" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8" Grid.RowSpan="9"/>
     </Grid>
 </UserControl>

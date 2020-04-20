@@ -6,12 +6,12 @@ namespace StoreManagerUI.Helpers
     public interface IUserDBHelper
     {
         /// <summary>
-        /// Creates new user and adds to database file
+        /// Creates new user and adds to database file. USER MUST BE VALIDATED BEFORE
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <param name="role">{admin, cashier, default}</param>
-        void AddNewUser(string username, string password, RolesModel.UserRoles role);
+        void AddNewUser(string username, string password, RolesModel.UserRoles role = RolesModel.UserRoles.blank);
         /// <summary>
         /// Checks if user exists in database and returns it's props
         /// </summary>

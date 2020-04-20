@@ -10,9 +10,10 @@ namespace StoreManagerUI.Models
     {
         public enum UserRoles
         {
+            blank,
             admin,
-            cashier,
-            random
+            cashier
+           
         }
         
     }

@@ -35,7 +35,7 @@ namespace StoreManagerUI.ViewModels
             set { _selectedUser = value; 
                 NotifyOfPropertyChange(()=>SelectedUser); 
                 NotifyOfPropertyChange(()=>CanRemoveSelectedUser); 
-                //NotifyOfPropertyChange(()=>CanApplyChanges); 
+                NotifyOfPropertyChange(()=>CanApplyChanges); 
             }
         }
 
@@ -67,8 +67,13 @@ namespace StoreManagerUI.ViewModels
         {
             get
             {
-                if (SelectedUser?.Role != null)
-                    return true;
+                if (SelectedUser?.Role != SelectedRole.ToString())
+                {
+                    if (SelectedUser?.Role != null)
+                        return true;
+                    else
+                        return false;
+                }
                 else
                     return false;
             }
