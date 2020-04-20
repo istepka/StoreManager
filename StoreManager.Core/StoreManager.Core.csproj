@@ -48,8 +48,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ILogger.cs" />
     <Compile Include="Models\IProductModel.cs" />
     <Compile Include="Models\IUserModel.cs" />
+    <Compile Include="Models\Logger.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

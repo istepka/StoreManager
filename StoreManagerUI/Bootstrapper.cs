@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Caliburn.Micro;
+using StoreManager.Core.Models;
 using StoreManager.Core.Validators;
 using StoreManagerUI.Helpers;
 using StoreManagerUI.Models;
@@ -32,6 +33,7 @@ namespace StoreManagerUI
 
             _container
                 .Singleton<IWindowManager, WindowManager>()
+                .Singleton<ILogger, Logger>()
                 .Singleton<IEventAggregator, EventAggregator>();
 
             _container

@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using StoreManager.Core.Models;
 using StoreManagerUI.Events;
 using StoreManagerUI.Models;
 using System;
@@ -49,6 +50,8 @@ namespace StoreManagerUI.ViewModels
             ActivateItem(_loginVM);
             ActiveLoggedUser = new UserModel() { Username = "No user"};
             _loginVM.LogInEvent += _loginVM_LogInEvent;
+            
+
         }
 
         /// <summary>

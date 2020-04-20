@@ -1,5 +1,6 @@
 ## Store Manager *work in progress*
-### Login, administrate your store and sell products 
+### Login, administrate, sell.
+### This program allows you to manage your retail store. You can create users, assign roles and grant access to store functionalities and management on a proper level. 
 
 ***
 ### Working wtih:
