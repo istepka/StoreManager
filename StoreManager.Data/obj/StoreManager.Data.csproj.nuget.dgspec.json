@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Data\\StoreManager.Data.csproj": {}
+    "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Data\\StoreManager.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Core\\StoreManager.Core.csproj": {
+    "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Core\\StoreManager.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Core\\StoreManager.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Core\\StoreManager.Core.csproj",
         "projectName": "StoreManager.Core",
-        "projectPath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Core\\StoreManager.Core.csproj",
+        "projectPath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Core\\StoreManager.Core.csproj",
         "packagesPath": "C:\\Users\\Ignacy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Core\\obj\\",
+        "outputPath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ignacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,20 +47,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[3.1.3, 3.1.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[3.1.3, 3.1.3]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[3.1.3, 3.1.3]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -71,21 +57,16 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Data\\StoreManager.Data.csproj": {
+    "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Data\\StoreManager.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Data\\StoreManager.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Data\\StoreManager.Data.csproj",
         "projectName": "StoreManager.Data",
-        "projectPath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Data\\StoreManager.Data.csproj",
+        "projectPath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Data\\StoreManager.Data.csproj",
         "packagesPath": "C:\\Users\\Ignacy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Data\\obj\\",
+        "outputPath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ignacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -101,8 +82,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Core\\StoreManager.Core.csproj": {
-                "projectPath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Core\\StoreManager.Core.csproj"
+              "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Core\\StoreManager.Core.csproj": {
+                "projectPath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Core\\StoreManager.Core.csproj"
               }
             }
           }
@@ -135,20 +116,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[3.1.3, 3.1.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[3.1.3, 3.1.3]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[3.1.3, 3.1.3]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -158,11 +125,6 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
         }
       }
     }

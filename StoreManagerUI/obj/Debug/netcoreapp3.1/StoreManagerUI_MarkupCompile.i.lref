@@ -1,4 +1,4 @@
-﻿C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Release\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+﻿C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.i.cs
 FC:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\App.xaml;;
 FC:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\Views\Admin\DashboardAdminView.xaml;;
 FC:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\Views\Admin\DashboardWelcomeView.xaml;;
@@ -7,6 +7,7 @@ FC:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\Views\Admin\Products\Adm
 FC:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\Views\Admin\Users\AddUserView.xaml;;
 FC:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\Views\Admin\Users\UserManagementView.xaml;;
 FC:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\Views\Cashier\CashierView.xaml;;
+FC:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\Views\Controls\CartView.xaml;;
 FC:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\Views\Login\BlankScreenView.xaml;;
 FC:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\Views\Login\LoginView.xaml;;
 FC:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\Views\Login\SignUpView.xaml;;

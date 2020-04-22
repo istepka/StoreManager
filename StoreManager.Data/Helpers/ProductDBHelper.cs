@@ -73,6 +73,13 @@ namespace StoreManagerUI.Models
                 cnn.Execute($"UPDATE Products SET Quantity = {quantity+actualQuantity} WHERE Id = {id}");
             }
         }
+        public void ChangeQuantityOfProduct(IProductModel product, int quantityToAdd)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute($"UPDATE Products SET Quantity = {quantityToAdd + product.Quantity} WHERE Id = {product.Id}");
+            }
+        }
 
         public void ChangeProductPrice(IProductModel productModel)
         {

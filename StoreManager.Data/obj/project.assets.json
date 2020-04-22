@@ -63,54 +63,6 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       }
-    },
-    ".NETCoreApp,Version=v3.1/win-x64": {
-      "Dapper/2.0.35": {
-        "type": "package",
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.7.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Dapper.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Dapper.dll": {}
-        }
-      },
-      "System.Data.SQLite.Core/1.0.112.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/System.Data.SQLite.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Data.SQLite.dll": {}
-        },
-        "native": {
-          "runtimes/win-x64/native/netstandard2.0/SQLite.Interop.dll": {}
-        }
-      },
-      "System.Reflection.Emit.Lightweight/4.7.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
-      },
-      "StoreManager.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/StoreManager.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/StoreManager.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      }
     }
   },
   "libraries": {
@@ -236,11 +188,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Data\\StoreManager.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Data\\StoreManager.Data.csproj",
       "projectName": "StoreManager.Data",
-      "projectPath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Data\\StoreManager.Data.csproj",
+      "projectPath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Data\\StoreManager.Data.csproj",
       "packagesPath": "C:\\Users\\Ignacy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Data\\obj\\",
+      "outputPath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ignacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -256,8 +208,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Core\\StoreManager.Core.csproj": {
-              "projectPath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Core\\StoreManager.Core.csproj"
+            "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Core\\StoreManager.Core.csproj": {
+              "projectPath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Core\\StoreManager.Core.csproj"
             }
           }
         }
@@ -290,20 +242,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[3.1.3, 3.1.3]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[3.1.3, 3.1.3]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[3.1.3, 3.1.3]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -313,11 +251,6 @@
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
       }
     }
   }

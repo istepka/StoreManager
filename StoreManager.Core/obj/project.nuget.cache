@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NHasedS9GL/hC62Qnxls5KX+LopmstGClyP/wijEzVkYrTUIaYFMNlNTa4rHkOV9ePjYLltz1k02LLg5auAVpA==",
+  "dgSpecHash": "cLhpL0ie6b6PXcROvhXaz6hnwiyFxidqtthLSV/2K/IFJRY1Ea8+1zKMi1GoyeXXj0UZTdx37KL6rkuZt38pQA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Core\\StoreManager.Core.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Ignacy\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\3.1.3\\microsoft.netcore.app.runtime.win-x64.3.1.3.nupkg.sha512",
-    "C:\\Users\\Ignacy\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\3.1.3\\microsoft.windowsdesktop.app.runtime.win-x64.3.1.3.nupkg.sha512",
-    "C:\\Users\\Ignacy\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\3.1.3\\microsoft.aspnetcore.app.runtime.win-x64.3.1.3.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Core\\StoreManager.Core.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

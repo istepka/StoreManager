@@ -35,5 +35,6 @@ namespace StoreManagerUI.Models
         /// </summary>
         /// <param name="productModel"></param>
         void ChangeProductPrice(IProductModel productModel);
+        void ChangeQuantityOfProduct(IProductModel product, int quantityToAdd);
     }
 }

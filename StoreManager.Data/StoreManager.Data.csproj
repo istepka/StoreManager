@@ -28,4 +28,8 @@
     <ProjectReference Include="..\StoreManager.Core\StoreManager.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="EFHelpers\" />
+  </ItemGroup>
+
 </Project>
