@@ -15,8 +15,10 @@ namespace StoreManagerUI.ViewModels
         private IUserDBHelper _userDBHelper;
         private IUserModel _selectedUser;
         private BindableCollection<IUserModel> _usersList;
+        private BindableCollection<IUserModel> _usersListFiltered;
         private RolesModel.UserRoles _selectedRole;
         private IUserValidator _userValidator;
+        private string _searchedUser;
 
         public UserManagementViewModel(IUserDBHelper userDBHelper, IUserValidator userValidator)
         {
@@ -43,8 +45,16 @@ namespace StoreManagerUI.ViewModels
 
         public BindableCollection<IUserModel> UsersList
         {
-            get { return _usersList; }
-            set { _usersList = value;
+            get 
+            {
+                if (SearchedUser != null)
+                    return FilteredList();
+                else
+                    return _usersList;       
+            }
+            set 
+            {          
+                _usersList = value;
                 NotifyOfPropertyChange(() => UsersList);
             }
         }
@@ -61,6 +71,33 @@ namespace StoreManagerUI.ViewModels
         }
 
         public List<RolesModel.UserRoles> Roles { get; set; } = Enum.GetValues(typeof(RolesModel.UserRoles)).Cast<RolesModel.UserRoles>().ToList();
+
+
+       
+
+        public string SearchedUser
+        {
+            get { return _searchedUser; }
+            set { _searchedUser = value; 
+                NotifyOfPropertyChange(()=> SearchedUser);
+                NotifyOfPropertyChange(()=> UsersList);
+
+            
+                          
+            }
+        }
+
+
+        public BindableCollection<IUserModel> FilteredList()
+        {
+            var list =  new BindableCollection<IUserModel>(_usersList.Where(x => x.Username.Contains(SearchedUser)).ToList());
+
+
+            return list;
+        }
+
+
+
 
 
         public bool CanApplyChanges

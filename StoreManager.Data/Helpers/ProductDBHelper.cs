@@ -84,14 +84,20 @@ namespace StoreManagerUI.Models
 
         public string LoadConnectionString(string id = "Products")
         {
-            string cnn = ConfigurationManager.ConnectionStrings[id].ConnectionString;
-            string path = Directory.GetCurrentDirectory();
-            int i = path.IndexOf("StoreManagerUI");
-            path = path.Substring(0, path.Length - (path.Length - i)) + "StoreManager.Data\\";
+            // string cnn = ConfigurationManager.ConnectionStrings[id].ConnectionString;
+            // string path = Directory.GetCurrentDirectory();
+            /*  int i = path.IndexOf("StoreManagerUI");
+               path = path.Substring(0, path.Length - (path.Length - i)) + "StoreManager.Data\\";
+              */
+            // path += "\\";
+            //string fixedConnectionString = cnn; //= cnn.Replace("{AppDir}", path);
 
-            string fixedConnectionString = cnn.Replace("{AppDir}", path);
-            return fixedConnectionString;   
-         }
+
+            var connectionStringBuilder = new SQLiteConnectionStringBuilder();
+            connectionStringBuilder.DataSource = "./ProductsDB.db";
+
+            return connectionStringBuilder.ConnectionString;
+        }
 
     }
 }

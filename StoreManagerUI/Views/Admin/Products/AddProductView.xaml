@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StoreManagerUI.Views" Background="WhiteSmoke"
-             mc:Ignorable="d"  Width="289.862" Height="344.389" BorderBrush="#FF191818">
+             mc:Ignorable="d" MinWidth="250" MinHeight="350" BorderBrush="#FF191818" Width="284.122">
 
 
     <Grid>

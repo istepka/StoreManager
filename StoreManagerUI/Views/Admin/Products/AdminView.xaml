@@ -19,8 +19,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto" MaxHeight="20"/>
+            <RowDefinition Height="auto" MaxHeight="50"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -42,9 +42,12 @@
         <TextBlock Grid.Row="2" Grid.Column="2" Text="Products in magazine" FontSize="16" FontWeight="SemiBold"  HorizontalAlignment="Center"/>
 
         <!--#endregion-->
-
+        <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
+            <TextBlock Text="Search by name: " VerticalAlignment="Center"/>
+            <TextBox x:Name="SearchedProduct" MinWidth="100" HorizontalAlignment="Center" Margin="5 10 20 10"/>
+        </StackPanel>
         <!--#region  ROW 3-->
-        <StackPanel Grid.Row="3" Grid.Column="2" Grid.RowSpan="4" Orientation="Vertical" Margin="0 0 20 5" >
+        <StackPanel Grid.Row="4" Grid.Column="2" Grid.RowSpan="4" Orientation="Vertical" Margin="0 0 20 5" >
             <ListView  x:Name="ProductsList" SelectedItem="{Binding Path=SelectedProduct, Mode=OneWayToSource}" MaxHeight="300" MinHeight="200" Grid.RowSpan="4" MaxWidth="300">
                 <ListView.View>
                     <GridView >

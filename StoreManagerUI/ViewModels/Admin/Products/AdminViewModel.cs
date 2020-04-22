@@ -16,7 +16,7 @@ namespace StoreManagerUI.ViewModels
     public class AdminViewModel : Conductor<object>
     {
         #region Private props
-        private BindableCollection<IProductModel> _productModels = new BindableCollection<IProductModel>();
+        private BindableCollection<IProductModel> _productsList = new BindableCollection<IProductModel>();
         private IProductModel _selectedProduct;
         private IProductDBHelper _dataAcesserModel;
         private int _quantityToAdd;
@@ -28,7 +28,7 @@ namespace StoreManagerUI.ViewModels
         {
             _selectedProduct = product;
             _dataAcesserModel = dataAcesserModel;
-            _productModels = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
+            _productsList = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
           
          
         }
@@ -48,8 +48,14 @@ namespace StoreManagerUI.ViewModels
 
         public BindableCollection<IProductModel> ProductsList
         {
-            get { return _productModels; }
-            set { _productModels = value; 
+            get 
+            {
+                if (SearchedProduct != null)
+                    return FilteredList();
+                else
+                    return _productsList; 
+            }
+            set { _productsList = value; 
                 NotifyOfPropertyChange(() => ProductsList);
             }
         }
@@ -149,13 +155,38 @@ namespace StoreManagerUI.ViewModels
         #region Methods and functions
         public void RefreshList()
         {
-            _productModels = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
+            _productsList = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
             NotifyOfPropertyChange(() => ProductsList);
         }
 
-     
+
 
         #endregion
+
+
+        private string _searchedProduct;
+
+        public string SearchedProduct
+        {
+            get { return _searchedProduct; }
+            set { _searchedProduct = value;
+                NotifyOfPropertyChange(() => SearchedProduct);
+                NotifyOfPropertyChange(() => ProductsList);
+            }
+        }
+
+
+
+
+
+        public BindableCollection<IProductModel> FilteredList()
+        {
+            var list = new BindableCollection<IProductModel>(_productsList.Where(x => x.Name.Contains(SearchedProduct)).ToList());
+
+
+            return list;
+        }
+
 
 
         public void AddNewProduct()

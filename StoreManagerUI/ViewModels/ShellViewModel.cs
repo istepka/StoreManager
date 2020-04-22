@@ -50,8 +50,8 @@ namespace StoreManagerUI.ViewModels
             ActivateItem(_loginVM);
             ActiveLoggedUser = new UserModel() { Username = "No user"};
             _loginVM.LogInEvent += _loginVM_LogInEvent;
-            
 
+       
         }
 
         /// <summary>

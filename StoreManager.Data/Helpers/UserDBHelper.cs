@@ -73,13 +73,20 @@ namespace StoreManagerUI.Helpers
 
         public string LoadConnectionString(string id = "Users")
         {
-            string cnn = ConfigurationManager.ConnectionStrings[id].ConnectionString;
-            string path = Directory.GetCurrentDirectory();
-            int i = path.IndexOf("StoreManagerUI");
-            path = path.Substring(0, path.Length - (path.Length - i)) + "StoreManager.Data\\";
+            // string cnn = ConfigurationManager.ConnectionStrings[id].ConnectionString;
+            // string path = Directory.GetCurrentDirectory();
+            /*   int i = path.IndexOf("StoreManagerUI");
+               path = path.Substring(0, path.Length - (path.Length - i)) + "StoreManager.Data\\";
+              */
+            // path += "\\";
 
-            string fixedConnectionString = cnn.Replace("{AppDir}", path);
-            return fixedConnectionString;
+            //string fixedConnectionString = cnn.Replace("{AppDir}", path);
+            // string fixedConnectionString = cnn;
+           // string dir = Directory.GetCurrentDirectory();
+            var connectionStringBuilder = new SQLiteConnectionStringBuilder();
+            connectionStringBuilder.DataSource = "./UsersDB.db";
+
+            return connectionStringBuilder.ConnectionString;
         }
 
 

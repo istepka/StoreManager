@@ -1,18 +1,16 @@
 ## Store Manager *work in progress*
-### Login, administrate, sell.
-### This program allows you to manage your retail store. You can create users, assign roles and grant access to store functionalities and management on a proper level. 
+### Login, administrate, sell products and organise your magazine. 
 
 ***
-### Working wtih:
+### Working with:
 * WPF & C#
 * Dependency injection
 * SQLite 
 * MVVM pattern 
-* .NET Framework 4.7
 ***
 
 ### NuGets
 * Dapper
-* SQLite.Core
+* SQLite
 * CaliburnMicro
 * Autofac

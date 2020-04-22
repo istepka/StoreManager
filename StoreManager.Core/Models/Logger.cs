@@ -11,6 +11,7 @@ namespace StoreManager.Core.Models
     {
         private string _logFileName;
         private static string path;
+        StreamWriter streamWriter;
 
         public Logger()
         {
@@ -22,6 +23,8 @@ namespace StoreManager.Core.Models
 
             _logFileName = $"logs_{date}.txt";
             CreateNewFile();
+            streamWriter = new StreamWriter(path);
+            WriteNewLog("Started programm");
         }
 
         private void CreateNewFile()
@@ -36,8 +39,9 @@ namespace StoreManager.Core.Models
 
         public void WriteNewLog(string content)
         {
-            StreamWriter streamWriter = new StreamWriter(path);
+            
             streamWriter.WriteLine(content);
+            
         }
 
 
