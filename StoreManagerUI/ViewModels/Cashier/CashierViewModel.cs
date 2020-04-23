@@ -14,24 +14,22 @@ namespace StoreManagerUI.ViewModels
     {
         private BindableCollection<IProductModel> _productsList = new BindableCollection<IProductModel>();
         private IProductModel _selectedProduct;
-        private IProductDBHelper _dataAcesserModel;
+        private IProductDBHelper _productDBHelper;
         private string _searchedProduct;
         private BindableCollection<IProductModel> _cart = new BindableCollection<IProductModel>();
         private decimal _total;
         private int _buyQuantity;
         private string _errorText;
-
-
-        public CashierViewModel(IProductDBHelper dataAcesserModel, IProductModel product)
+     
+        public CashierViewModel(IProductDBHelper productDBHelper, IProductModel product)
         {
             _selectedProduct = product;
-            _dataAcesserModel = dataAcesserModel;
-            _productsList = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
+            _productDBHelper = productDBHelper;
+            _productsList = new BindableCollection<IProductModel>(_productDBHelper.LoadProducts());
+       
         }
 
-
-
-
+    
         public BindableCollection<IProductModel> ProductsList
         {
             get
@@ -151,16 +149,23 @@ namespace StoreManagerUI.ViewModels
         }
 
 
+       
 
+
+        public void BuyButton()
+        {
+            Cart.Clear();
+            Total = default;
+        }
         public void BuyProduct()
         {
             ErrorText = "Product Bought";
             if (BuyQuantity == SelectedProduct.Quantity)
             {
-                _dataAcesserModel.RemoveExistingProduct(SelectedProduct.Id);
+                _productDBHelper.RemoveExistingProduct(SelectedProduct.Id);
             }
             else
-                _dataAcesserModel.ChangeQuantityOfProduct(SelectedProduct, -BuyQuantity);
+                _productDBHelper.ChangeQuantityOfProduct(SelectedProduct, -BuyQuantity);
 
 
             AddToCart(SelectedProduct, BuyQuantity);
@@ -194,7 +199,7 @@ namespace StoreManagerUI.ViewModels
         }
         public void RefreshList()
         {
-            _productsList = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
+            _productsList = new BindableCollection<IProductModel>(_productDBHelper.LoadProducts());
             NotifyOfPropertyChange(() => ProductsList);
         }
 

@@ -84,7 +84,6 @@ C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\S
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\DashboardAdminView.g.cs
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\DashboardWelcomeView.g.cs
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\Products\AddProductView.g.cs
-C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\Products\AdminView.g.cs
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\Users\AddUserView.g.cs
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\Users\UserManagementView.g.cs
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Cashier\CashierView.g.cs
@@ -100,7 +99,6 @@ C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\A
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\DashboardAdminView.baml
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\DashboardWelcomeView.baml
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\Products\AddProductView.baml
-C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\Products\AdminView.baml
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\Users\AddUserView.baml
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\Users\UserManagementView.baml
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Cashier\CashierView.baml
@@ -118,3 +116,5 @@ C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\S
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\StoreManagerUI.genruntimeconfig.cache
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Controls\CartView.g.cs
 C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Controls\CartView.baml
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\Products\ProductsManagementView.g.cs
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManagerUI\obj\Debug\netcoreapp3.1\Views\Admin\Products\ProductsManagementView.baml

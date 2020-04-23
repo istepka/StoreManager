@@ -1,6 +1,8 @@
 ﻿using Caliburn.Micro;
 using StoreManager.Core.Models;
+using StoreManager.Core.Validators;
 using StoreManagerUI.Events;
+using StoreManagerUI.Helpers;
 using StoreManagerUI.Models;
 using System;
 using System.Collections.Generic;
@@ -16,9 +18,29 @@ namespace StoreManagerUI.ViewModels
         private CashierViewModel _cashierVM;
         private LoginViewModel _loginVM;
         private BlankScreenViewModel _blankVM;
-
-
+        IUserDBHelper _userDBHelper;
+        IUserValidator _userValidator;
         private UserModel _activeLoggedUser;
+
+
+
+       
+
+        public ShellViewModel(DashboardAdminViewModel dashboardVM, CashierViewModel cashierVM, LoginViewModel loginVM, BlankScreenViewModel blankVM,
+            IUserDBHelper userDBHelper, IUserValidator userValidator)
+        {
+            _dashboardVM = dashboardVM;
+            _cashierVM = cashierVM;
+            _loginVM = loginVM;
+            _blankVM = blankVM;
+            _userDBHelper = userDBHelper;
+            _userValidator = userValidator;
+            ActivateItem(_loginVM);
+            ActiveLoggedUser = new UserModel() { Username = "No user"};
+            _loginVM.LogInEvent += _loginVM_LogInEvent;
+
+       
+        }
 
         public UserModel ActiveLoggedUser
         {
@@ -41,38 +63,6 @@ namespace StoreManagerUI.ViewModels
 
 
 
-        public ShellViewModel(DashboardAdminViewModel dashboardVM, CashierViewModel cashierVM, LoginViewModel loginVM, BlankScreenViewModel blankVM)
-        {
-            _dashboardVM = dashboardVM;
-            _cashierVM = cashierVM;
-            _loginVM = loginVM;
-            _blankVM = blankVM;
-            ActivateItem(_loginVM);
-            ActiveLoggedUser = new UserModel() { Username = "No user"};
-            _loginVM.LogInEvent += _loginVM_LogInEvent;
-
-       
-        }
-
-        /// <summary>
-        /// Automatically logs into right dashoard
-        /// </summary>
-        private void _loginVM_LogInEvent(object sender, LogInEventArgs e)
-        {
-            ActiveLoggedUser =  e.ActiveUser;
-            if (e.ActiveUser?.Role == "admin")
-                AdminScreen();
-            else if (e.ActiveUser?.Role == "cashier")
-                CashierScreen();
-            else
-                BlankScreen();
-            
-            if(e.LoggedInSuccesfully == true)
-            {
-                DeactivateItem(_loginVM, true);
-            }
-        }
-
         public bool CanAdminScreen
         {
             get
@@ -94,6 +84,35 @@ namespace StoreManagerUI.ViewModels
             }
         }
 
+        private void _loginVM_LogInEvent(object sender, LogInEventArgs e)
+        {
+            if (e.LoggedInSuccesfully == true)
+                _loginVM.LogInEvent -= _loginVM_LogInEvent;
+
+
+            ActiveLoggedUser =  e.ActiveUser;
+            if (e.ActiveUser?.Role == "admin")
+            {
+                DeactivateItem(_loginVM, true);
+                AdminScreen();
+            }
+            else if (e.ActiveUser?.Role == "cashier")
+            {
+                DeactivateItem(_loginVM, true);
+                CashierScreen();
+
+            }
+            else
+            {
+                DeactivateItem(_loginVM, true);
+                BlankScreen();
+            }
+            //if(e.LoggedInSuccesfully == true)
+            //{
+            //    DeactivateItem(_loginVM, true);
+            //}
+        }
+
         public void AdminScreen()
         {
             ActivateItem(_dashboardVM);
@@ -105,9 +124,9 @@ namespace StoreManagerUI.ViewModels
 
         public void LoginScreen()
         {
-            
+            _loginVM = new LoginViewModel(_userDBHelper, _userValidator);
             ActiveLoggedUser = new UserModel() { Username = "No user"};
-
+            _loginVM.LogInEvent += _loginVM_LogInEvent;
             ActivateItem(_loginVM);
         }
         public void BlankScreen()

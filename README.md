@@ -7,6 +7,7 @@
 * Dependency injection
 * SQLite 
 * MVVM pattern 
+* .Net Core 3.1
 ***
 
 ### NuGets

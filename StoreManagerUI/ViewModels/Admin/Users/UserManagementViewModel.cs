@@ -15,7 +15,7 @@ namespace StoreManagerUI.ViewModels
         private IUserDBHelper _userDBHelper;
         private IUserModel _selectedUser;
         private BindableCollection<IUserModel> _usersList;
-        private BindableCollection<IUserModel> _usersListFiltered;
+        //private BindableCollection<IUserModel> _usersListFiltered;
         private RolesModel.UserRoles _selectedRole;
         private IUserValidator _userValidator;
         private string _searchedUser;

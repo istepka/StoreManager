@@ -89,7 +89,7 @@ namespace StoreManagerUI.ViewModels
 		{
 			
 				UserModel user = _userDBHelper.GetUser(username, Password);
-				if (user.Role != null)
+				if (user.Username != null)
 				{
 					ActiveUser = user;
 					LoginError = "Login succeded";
@@ -99,9 +99,9 @@ namespace StoreManagerUI.ViewModels
 				else
 				{
 					LoginError = "Login failed, try again";
-					Password = "";
+					//Password = "";
 					ActiveUser = null;
-					LogInEvent?.Invoke(this, new LogInEventArgs(false));
+					//LogInEvent?.Invoke(this, new LogInEventArgs(false));
 				}
 		
 			

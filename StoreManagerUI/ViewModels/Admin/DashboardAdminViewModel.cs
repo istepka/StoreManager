@@ -16,7 +16,7 @@ namespace StoreManagerUI.ViewModels
         private IProductDBHelper _dataAccessModel;
         private IProductModel _productModel;
         private IUserDBHelper _userDBHelper;
-        private AdminViewModel _adminVM;
+        private ProductsManagementViewModel _adminVM;
         private UserManagementViewModel _userManagementVM;
         private DashboardWelcomeViewModel _dashboardWelcomeVM;
         private IUserValidator _userValidator;
@@ -50,7 +50,7 @@ namespace StoreManagerUI.ViewModels
 
         public void ProductManager()
         {
-            _adminVM = new AdminViewModel(_dataAccessModel, _productModel);
+            _adminVM = new ProductsManagementViewModel(_dataAccessModel, _productModel);
             ActivateItem(_adminVM);
         }
 

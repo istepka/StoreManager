@@ -13,22 +13,22 @@ namespace StoreManagerUI.ViewModels
     /// <summary>
     /// Admin dashboard VM
     /// </summary>
-    public class AdminViewModel : Conductor<object>
+    public class ProductsManagementViewModel : Conductor<object>
     {
         #region Private props
         private BindableCollection<IProductModel> _productsList = new BindableCollection<IProductModel>();
         private IProductModel _selectedProduct;
-        private IProductDBHelper _dataAcesserModel;
+        private IProductDBHelper _productDBHelper;
         private int _quantityToAdd;
         private decimal _newPrice;
         AddProductViewModel _addForm;
         #endregion
 
-        public AdminViewModel(IProductDBHelper dataAcesserModel, IProductModel product)
+        public ProductsManagementViewModel(IProductDBHelper productDBHelper, IProductModel product)
         {
             _selectedProduct = product;
-            _dataAcesserModel = dataAcesserModel;
-            _productsList = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
+            _productDBHelper = productDBHelper;
+            _productsList = new BindableCollection<IProductModel>(_productDBHelper.LoadProducts());
           
          
         }
@@ -133,12 +133,12 @@ namespace StoreManagerUI.ViewModels
         public void RemoveProduct()
         {
             //TODO REMOVE FROM LIST
-            _dataAcesserModel.RemoveExistingProduct(SelectedProduct.Id);
+            _productDBHelper.RemoveExistingProduct(SelectedProduct.Id);
             RefreshList();
         }
         public void SubmitQuantityChange()
         {
-            _dataAcesserModel.ChangeQuantityOfProduct(SelectedProduct.Quantity, QuantityToAdd, SelectedProduct.Id);
+            _productDBHelper.ChangeQuantityOfProduct(SelectedProduct.Quantity, QuantityToAdd, SelectedProduct.Id);
             QuantityToAdd = 0;
             RefreshList();
         }
@@ -155,7 +155,7 @@ namespace StoreManagerUI.ViewModels
         #region Methods and functions
         public void RefreshList()
         {
-            _productsList = new BindableCollection<IProductModel>(_dataAcesserModel.LoadProducts());
+            _productsList = new BindableCollection<IProductModel>(_productDBHelper.LoadProducts());
             NotifyOfPropertyChange(() => ProductsList);
         }
 
@@ -191,7 +191,7 @@ namespace StoreManagerUI.ViewModels
 
         public void AddNewProduct()
         {
-             _addForm = new AddProductViewModel(_dataAcesserModel);
+             _addForm = new AddProductViewModel(_productDBHelper);
             //new WindowManager().ShowWindow(addForm);
             ActivateItem(_addForm);
 
@@ -201,7 +201,7 @@ namespace StoreManagerUI.ViewModels
         public void SubmitNewPrice()
         {
             SelectedProduct.Price = NewPrice;
-            _dataAcesserModel.ChangeProductPrice(SelectedProduct);
+            _productDBHelper.ChangeProductPrice(SelectedProduct);
             NewPrice = 0;
             RefreshList();
         }

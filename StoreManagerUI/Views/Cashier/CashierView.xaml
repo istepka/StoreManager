@@ -57,7 +57,7 @@
         <!--#region Cart-->
         <StackPanel Orientation="Vertical" Grid.Row="3" Grid.Column="3" Grid.RowSpan="5">
             <ListView  x:Name="Cart" 
-                   MaxHeight="300" MinHeight="200" Grid.RowSpan="4" MaxWidth="300" Grid.Row="3" Grid.Column="1">
+                   MaxHeight="300" MinHeight="200" Grid.RowSpan="4" MaxWidth="300" Grid.Row="3" Grid.Column="1" >
                 <ListView.View>
                     <GridView >
                         <GridViewColumn Header="Name"  DisplayMemberBinding="{Binding Name}"  />
@@ -70,23 +70,24 @@
                 <TextBlock Text="Total: " HorizontalAlignment="Left"/>
                 <TextBlock x:Name="TotalUI" HorizontalAlignment="Right"/>
             </StackPanel>
+            <Button x:Name="BuyButton" Content="Clear cart" Margin="10"/>
         </StackPanel>
         <!--#endregion-->
 
         <!--#region Buy section-->
-        <StackPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-            <TextBlock Text="Selected product: "  FontSize="14" />
-            <TextBlock x:Name="SelectedProduct_ProductOverview"   FontSize="14" MinWidth="20" />
+        <StackPanel Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" MinWidth="150">
+            <TextBlock Text="Selected product: "  FontSize="14"  HorizontalAlignment="Center"/>
+            <TextBlock x:Name="SelectedProduct_ProductOverview"   FontSize="14" MinWidth="20" HorizontalAlignment="Center"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="2" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center">
+        <StackPanel Grid.Column="2" Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Center">
             <TextBlock Text="Quantity to buy" />
             <TextBox x:Name="BuyQuantity" MinWidth="25" Margin="10 0 0 0" />
         </StackPanel>
 
-        <Button x:Name="BuyProduct" Content="Buy product" Grid.Column="2" Grid.Row="4" Margin="20"/>
+        <Button x:Name="BuyProduct" Content="Buy product" Grid.Column="2" Grid.Row="5" Margin="10 0" Padding="-10"/>
 
-        <TextBlock x:Name="ErrorText" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" />
+        <TextBlock x:Name="ErrorText" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" />
 
 
         <!--#endregion-->
