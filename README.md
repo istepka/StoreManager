@@ -1,6 +1,6 @@
 ## Store Manager 
 ***
-#### Application that helps with organizing your store. 
+### Application that helps with organizing your store. 
 Login, administrate, sell products and organize.
 ***
 ### From dev side
@@ -20,7 +20,7 @@ Functionalities in app allows you to set roles for users/employees and grant the
 - After login you will see a cashier dashboard which is simply a checkout tab with avaliable products which you can buy and add to cart. Of course you can also browse products list and filter it.
 
 
-Download application on http://tiny.cc/storemanager (shortened link to google drive .zip executable).
+Download application from https://drive.google.com/drive/folders/15j7SU9rixn7Nh2wguMqOZlbXc20e5raK?usp=sharing
 
 ***
 ### Working with:
