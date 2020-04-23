@@ -12,3 +12,17 @@ C:\Users\Ignacy\source\repos\StoreManagerCore\StoreManager.Data\obj\Release\netc
 C:\Users\Ignacy\source\repos\StoreManagerCore\StoreManager.Data\obj\Release\netcoreapp3.1\StoreManager.Data.pdb
 C:\Users\Ignacy\source\repos\StoreManagerCore\StoreManager.Data\bin\Release\netcoreapp3.1\ProductsDB.db
 C:\Users\Ignacy\source\repos\StoreManagerCore\StoreManager.Data\bin\Release\netcoreapp3.1\UsersDB.db
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\bin\Release\netcoreapp3.1\ProductsDB.db
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\bin\Release\netcoreapp3.1\UsersDB.db
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\bin\Release\netcoreapp3.1\StoreManager.Data.deps.json
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\bin\Release\netcoreapp3.1\StoreManager.Data.dll
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\bin\Release\netcoreapp3.1\StoreManager.Data.pdb
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\bin\Release\netcoreapp3.1\StoreManager.Core.dll
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\bin\Release\netcoreapp3.1\StoreManager.Core.pdb
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\obj\Release\netcoreapp3.1\StoreManager.Data.csprojAssemblyReference.cache
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\obj\Release\netcoreapp3.1\StoreManager.Data.csproj.CoreCompileInputs.cache
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\obj\Release\netcoreapp3.1\StoreManager.Data.AssemblyInfoInputs.cache
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\obj\Release\netcoreapp3.1\StoreManager.Data.AssemblyInfo.cs
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\obj\Release\netcoreapp3.1\StoreManager.Data.csproj.CopyComplete
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\obj\Release\netcoreapp3.1\StoreManager.Data.dll
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Data\obj\Release\netcoreapp3.1\StoreManager.Data.pdb

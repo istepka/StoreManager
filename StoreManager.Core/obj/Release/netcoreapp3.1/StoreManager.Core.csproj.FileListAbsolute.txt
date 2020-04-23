@@ -7,3 +7,12 @@ C:\Users\Ignacy\source\repos\StoreManagerCore\StoreManager.Core\obj\Release\netc
 C:\Users\Ignacy\source\repos\StoreManagerCore\StoreManager.Core\obj\Release\netcoreapp3.1\StoreManager.Core.AssemblyInfo.cs
 C:\Users\Ignacy\source\repos\StoreManagerCore\StoreManager.Core\obj\Release\netcoreapp3.1\StoreManager.Core.dll
 C:\Users\Ignacy\source\repos\StoreManagerCore\StoreManager.Core\obj\Release\netcoreapp3.1\StoreManager.Core.pdb
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Core\bin\Release\netcoreapp3.1\StoreManager.Core.deps.json
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Core\bin\Release\netcoreapp3.1\StoreManager.Core.dll
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Core\bin\Release\netcoreapp3.1\StoreManager.Core.pdb
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Core\obj\Release\netcoreapp3.1\StoreManager.Core.csprojAssemblyReference.cache
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Core\obj\Release\netcoreapp3.1\StoreManager.Core.csproj.CoreCompileInputs.cache
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Core\obj\Release\netcoreapp3.1\StoreManager.Core.AssemblyInfoInputs.cache
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Core\obj\Release\netcoreapp3.1\StoreManager.Core.AssemblyInfo.cs
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Core\obj\Release\netcoreapp3.1\StoreManager.Core.dll
+C:\Users\Ignacy\Desktop\StoreManagerGit\StoreManager.Core\obj\Release\netcoreapp3.1\StoreManager.Core.pdb

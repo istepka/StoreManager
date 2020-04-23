@@ -451,11 +451,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManagerUI\\StoreManagerUI.csproj",
+      "projectUniqueName": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManagerUI\\StoreManagerUI.csproj",
       "projectName": "StoreManagerUI",
-      "projectPath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManagerUI\\StoreManagerUI.csproj",
+      "projectPath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManagerUI\\StoreManagerUI.csproj",
       "packagesPath": "C:\\Users\\Ignacy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManagerUI\\obj\\publish\\win-x64\\",
+      "outputPath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManagerUI\\obj\\publish\\win-x64\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ignacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -471,11 +471,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Core\\StoreManager.Core.csproj": {
-              "projectPath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Core\\StoreManager.Core.csproj"
+            "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Core\\StoreManager.Core.csproj": {
+              "projectPath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Core\\StoreManager.Core.csproj"
             },
-            "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Data\\StoreManager.Data.csproj": {
-              "projectPath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManager.Data\\StoreManager.Data.csproj"
+            "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Data\\StoreManager.Data.csproj": {
+              "projectPath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManager.Data\\StoreManager.Data.csproj"
             }
           }
         }

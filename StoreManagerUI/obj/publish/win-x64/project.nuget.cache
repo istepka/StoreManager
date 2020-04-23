@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "El6dqD51GBuzAPeYwV3qEahKl/rrjOHFWNRJqIlm+DO006k/vZ4AiR4WCW7/AZWtTQ9iOU/0WZt9A4ybv8D6sA==",
+  "dgSpecHash": "oaXPY33gKBVlflE4VjbPPJzWXpaXCAqVisOjlwsov1t4ETIesIWvfQKRBFFYfJ3eVe5lpwNVeCOFTCpNWa34Eg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ignacy\\source\\repos\\StoreManagerCore\\StoreManagerUI\\StoreManagerUI.csproj",
+  "projectFilePath": "C:\\Users\\Ignacy\\Desktop\\StoreManagerGit\\StoreManagerUI\\StoreManagerUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ignacy\\.nuget\\packages\\autofac\\5.1.2\\autofac.5.1.2.nupkg.sha512",
     "C:\\Users\\Ignacy\\.nuget\\packages\\caliburn.micro\\3.2.0\\caliburn.micro.3.2.0.nupkg.sha512",
