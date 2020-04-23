@@ -18,9 +18,9 @@ namespace StoreManagerUI.Views
     /// <summary>
     /// Interaction logic for AdminView.xaml
     /// </summary>
-    public partial class AdminView : UserControl
+    public partial class ProductsManagementView : UserControl
     {
-        public AdminView()
+        public ProductsManagementView()
         {
             InitializeComponent();
         }
