@@ -21,6 +21,7 @@ Functionalities in app allows you to set roles for users/employees and grant the
 
 
 Download application from https://drive.google.com/drive/folders/15j7SU9rixn7Nh2wguMqOZlbXc20e5raK?usp=sharing
+###If you want to test app, you can login onto super safe basic admin account Login: Admin, Password: admin
 
 ***
 ### Working with:
